@@ -3,37 +3,25 @@ Professional experience as a technical designer
 
 # WIN Reality
 ## Team Training
-Desc: First multiplayer experience inside of WIN Reality.
+Desc: First multiplayer experience inside of WIN Reality. \
 Responsibilities:
 
 ### Scoreboard
-Desc:
+Desc:\
 Responsibilities:
 
 ### Emotes
-Desc:
+Desc:\
 Responsibilities:
 
 ### UI
-Desc:
+Desc:\
 Responsibilities:
 
 ## Live Pitch
-Desc: Mobile companion
+Desc: Mobile companion\
 Responsibilities:
 
 ## Feed.fm Music Streaming
-Desc: Music Streaming
-Responsibilities:
-
-# Hearthstone
-Desc:
-Responsibilities:
-
-## Mini-Set
-Desc:
-Responsibilities:
-
-## In-Game Announcements
-Desc:
+Desc: Music Streaming\
 Responsibilities:
