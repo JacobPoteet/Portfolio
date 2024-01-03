@@ -5,22 +5,22 @@ Professional experience as a technical designer
 ## Team Training
 Desc: First multiplayer experience inside of WIN Reality.
 
-**Responsibilities:**
+**Responsibilities:** Technical Design Feature Lead
 
 ### Scoreboard
 Desc:
 
-**Responsibilities:**
+**Responsibilities:** Collaborated with Art on UI/UX, System Design, Implementation
 
 ### Emotes
 Desc:
 
-**Responsibilities:**
+**Responsibilities:** Design, Implementation in C#, Integrated provided Photon events from engineers
 
 ### UI
 Desc:
 
-**Responsibilities:**
+**Responsibilities:** Hookup backend data to the provided prefabs
 
 ## Live Pitch
 This was the first iteration of a multiplayer expeince. User's could use the WIN Reality app to send pitches to a player in VR to hit against.
