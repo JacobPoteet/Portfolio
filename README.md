@@ -28,7 +28,7 @@ Exhibition Mode in our full inning baseball game mode where player's are challen
 ## Live Pitch
 This was the first iteration of a multiplayer expeince. User's could use the WIN Reality app to send pitches to a player in VR to hit against.
 
-<img src="LivePitchDemo.gif">
+<img src="Assets\LivePitchDemo.gif">
 
 **Responsibilities:** Design, VR UI/UX, Led the feature from proof of concept to release
 
