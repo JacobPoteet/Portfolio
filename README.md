@@ -45,6 +45,10 @@ I designed and implemented a system enabling the creation of new bats by predete
 # Stable Diffusion
 [Custom Comfy UI Workflows](https://github.com/JacobPoteet/ComfyUI_Workflows)
 [Civitai Profile](https://civitai.com/user/JacobPoteet/posts)
-| | | |
-|---|---|---|
-| ![AI Image 1](Assets\AI_Image_1.png) | ![AI Image 2](Assets\AI_Image_2.png) | ![AI Image 3](Assets\AI_Image_3.png) |
+<table>
+  <tr>
+    <td><img src="Assets\AI_Image_1.png"></td>
+    <td><img src="Assets\AI_Image_2.png"></td>
+    <td><img src="Assets\AI_Image_3.png"></td>
+  </tr>
+</table>
