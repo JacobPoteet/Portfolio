@@ -17,6 +17,14 @@ Desc:
 
 **Responsibilities:** Design, Implementation in C#, Integrated provided Photon events from engineers
 
+
+## AI Pitcher Images
+Exhibition Mode in our full inning baseball game mode where player's are challenged against a weekly rotaion of pitchers. These pitchers are represented by AI generated images that match their video counterpart.
+**Responsibilities** Designed ComfyUI workflows that allowed me to create over 9,500 images of a diverse range of pitchers 
+
+<img src="Assets\AI_Pitchers.png">
+
+
 ## Live Pitch
 This was the first iteration of a multiplayer expeince. User's could use the WIN Reality app to send pitches to a player in VR to hit against.
 
@@ -45,12 +53,6 @@ I designed and implemented a system enabling the creation of new bats by predete
 
 <img src="Assets\BatVisuals.gif">
 <img src="Assets\WoodBatShowcase.png">
-
-## AI Pitcher Images
-
-**Responsibilities** 
-
-<img src="Assets\AI_Pitchers.png">
 
 # Stable Diffusion
 [Custom Comfy UI Workflows](https://github.com/JacobPoteet/ComfyUI_Workflows)
