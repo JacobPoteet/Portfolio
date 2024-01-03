@@ -20,6 +20,8 @@ Desc:
 ## Live Pitch
 This was the first iteration of a multiplayer expeince. User's could use the WIN Reality app to send pitches to a player in VR to hit against.
 
+<img src="Assets\LivePitchDemo.mp4">
+
 **Responsibilities:** Design, VR UI/UX, Led the feature from proof of concept to release
 
 ## Global Leaderboard
@@ -44,6 +46,7 @@ I designed and implemented a system enabling the creation of new bats by predete
 
 # Stable Diffusion
 [Custom Comfy UI Workflows](https://github.com/JacobPoteet/ComfyUI_Workflows)
+
 [Civitai Profile](https://civitai.com/user/JacobPoteet/posts)
 <table>
   <tr>
