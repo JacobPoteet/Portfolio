@@ -43,3 +43,6 @@ I design and implemented a music player that integrated with Feed.fm's API. Play
 I designed and implemented a system enabling the creation of new bats by predetermined types such as wood or metal, dictating their distinct mesh design and triggering specific audio events.
 
 **Responsibilities:** System Design, Implementation in C#
+
+<img src="Assets\BatVisuals.gif">
+<img src="Assets\WoodBatShowcase.png">
