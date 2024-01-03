@@ -28,7 +28,7 @@ This was the first iteration of a multiplayer expeince. User's could use the WIN
 **Responsibilities:** Design, VR UI/UX, Led the feature from proof of concept to release 
 
 ## Feed.fm Music Streaming
-I design and implemented a music player that integrated with Feed.fm's API. Users were able to choose from a list of stations and could skip, play/pause, and adjust volume. Users could use this in the menu while pointing with the quest controller, or could interact using their bat on the field.
+I design and implemented a music player that integrated with Feed.fm's API. Players were able to choose from a list of stations and could skip, play/pause, and adjust volume. This feature can be used in the menu by pointing with the quest controller, or could interact using their bat on the field.
 
 **Responsibilities:** Design, Implementation in C#, UI/UX, Integration with 3rd Party API
 
