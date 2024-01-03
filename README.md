@@ -20,7 +20,7 @@ Desc:
 ## Live Pitch
 This was the first iteration of a multiplayer expeince. User's could use the WIN Reality app to send pitches to a player in VR to hit against.
 
-<a href="Assets\LivePitchDemo.mp4">
+<a href="https://winreality2023.wpenginepowered.com/wp-content/uploads/2023/10/Live-Pitch-16X9-1.mp4" target="_blank">
   <img src="Assets\LivePitchThumbnail.png" alt="Video Preview" width="1280">
 </a>
 
