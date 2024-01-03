@@ -20,9 +20,9 @@ Desc:
 ## Live Pitch
 This was the first iteration of a multiplayer expeince. User's could use the WIN Reality app to send pitches to a player in VR to hit against.
 
-<video width="1920" height="1080" controls>
-  <source src="Assets\LivePitchDemo.mp4" type="video/mp4">
-</video>
+<a href="Assets\LivePitchDemo.mp4">
+  <img src="Assets\LivePitchThumbnail.png" alt="Video Preview" width="1280">
+</a>
 
 **Responsibilities:** Design, VR UI/UX, Led the feature from proof of concept to release
 
