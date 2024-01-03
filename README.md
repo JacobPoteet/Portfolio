@@ -17,11 +17,6 @@ Desc:
 
 **Responsibilities:** Design, Implementation in C#, Integrated provided Photon events from engineers
 
-### UI
-Desc:
-
-**Responsibilities:** Hookup backend data to the provided prefabs
-
 ## Live Pitch
 This was the first iteration of a multiplayer expeince. User's could use the WIN Reality app to send pitches to a player in VR to hit against.
 
@@ -46,3 +41,10 @@ I designed and implemented a system enabling the creation of new bats by predete
 
 <img src="Assets\BatVisuals.gif">
 <img src="Assets\WoodBatShowcase.png">
+
+# Stable Diffusion
+[Custom Comfy UI Workflows](https://github.com/JacobPoteet/ComfyUI_Workflows)
+[Civitai Profile](https://civitai.com/user/JacobPoteet/posts)
+<img src="Assets\AI_Image_1.png">
+<img src="Assets\AI_Image_2.png">
+<img src="Assets\AI_Image_3.png">
