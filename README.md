@@ -25,7 +25,14 @@ Desc:
 ## Live Pitch
 This was the first iteration of a multiplayer expeince. User's could use the WIN Reality app to send pitches to a player in VR to hit against.
 
-**Responsibilities:** Design, VR UI/UX, Led the feature from proof of concept to release 
+**Responsibilities:** Design, VR UI/UX, Led the feature from proof of concept to release
+
+## Global Leaderboard
+TODO: Global Leaderboard Description
+
+**Responsibilities:** System Design, Implementation in C#, Collaborate with Art on UI/UX
+
+<img src="Assets\Leaderboard.gif">
 
 ## Feed.fm Music Streaming
 I design and implemented a music player that integrated with Feed.fm's API. Players were able to choose from a list of stations and could skip, play/pause, and adjust volume. This feature can be used in the menu by pointing with the quest controller, or could interact using their bat on the field.
