@@ -46,6 +46,12 @@ I designed and implemented a system enabling the creation of new bats by predete
 <img src="Assets\BatVisuals.gif">
 <img src="Assets\WoodBatShowcase.png">
 
+## AI Pitcher Images
+
+**Responsibilities** 
+
+<img src="Assets\AI_Pitchers.png">
+
 # Stable Diffusion
 [Custom Comfy UI Workflows](https://github.com/JacobPoteet/ComfyUI_Workflows)
 
