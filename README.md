@@ -1,11 +1,11 @@
-# Portfolio (Work In Progress)
-Professional experience as a technical designer
+# Portfolio
+Professional experience as a senior technical designer
 
 # WIN Reality
 ## Team Training
-Desc: First multiplayer experience inside of WIN Reality.
+Team Training offers an immersive multiplayer experience accommodating up to 100 players engaging in thrilling batting practice battles across diverse game modes. Guided by a dedicated coach, each session is an interactive journey, providing invaluable instructional feedback alongside lively and energizing commentary.
 
-**Responsibilities:** Technical Design Feature Lead
+**Responsibilities:** Technical Design Feature Lead, Designed and implemented game modes, scoreboard, and emotes. 
 
 <table>
   <tr>
@@ -15,30 +15,30 @@ Desc: First multiplayer experience inside of WIN Reality.
 </table>
 
 
-
 ## AI Pitcher Images
-Exhibition Mode in our full inning baseball game mode where player's are challenged against a weekly rotaion of pitchers. These pitchers are represented by AI generated images that match their video counterpart.
+Exhibition Mode presents a full-inning challenge where players face a weekly rotation of pitchers. These skilled pitchers are brought to life through AI-generated images that faithfully represent their video counterparts, providing an immersive and dynamic experience.
+
 **Responsibilities** Designed ComfyUI workflows that allowed me to create over 9,500 images of a diverse range of pitchers 
 
 <img src="Assets\AI_Pitchers.png">
 
 
 ## Live Pitch
-This was the first iteration of a multiplayer expeince. User's could use the WIN Reality app to send pitches to a player in VR to hit against.
+This marked the debut of a groundbreaking multiplayer experience. Users utilize the WIN Reality app to send pitches into a VR environment, allowing players to face these pitches and swing away in immersive virtual reality scenarios.
 
 <img src="Assets\LivePitchDemo.gif">
 
 **Responsibilities:** Design, VR UI/UX, Led the feature from proof of concept to release
 
 ## Global Leaderboard
-TODO: Global Leaderboard Description
+Within the main menu, players can glance to the right and access a global leaderboard showcasing user stats for the current month. This dynamic panel cycles through, highlighting each player along with additional statistics, offering an engaging and comprehensive view of the gaming community's achievements.
 
 **Responsibilities:** System Design, Implementation in C#, Collaborate with Art on UI/UX
 
 <img src="Assets\Leaderboard.gif">
 
 ## Feed.fm Music Streaming
-I design and implemented a music player that integrated with Feed.fm's API. Players were able to choose from a list of stations and could skip, play/pause, and adjust volume. This feature can be used in the menu by pointing with the quest controller, or could interact using their bat on the field.
+I design and implemented a music player using to Feed.fm's API, offering players station choices with skip, play/pause, and volume controls. They could interact via the menu using the Quest controller or in the game field with their bat.
 
 **Responsibilities:** Design, Implementation in C#, UI/UX, Integration with 3rd Party API
 
@@ -50,7 +50,7 @@ I design and implemented a music player that integrated with Feed.fm's API. Play
 </table>
 
 ## Dynamic Bat Visuals
-I designed and implemented a system enabling the creation of new bats by predetermined types such as wood or metal, dictating their distinct mesh design and triggering specific audio events.
+I developed a system allowing the creation of various bat types like wood or metal, each with unique mesh designs and triggering specific sound effects for a more immersive experience.
 
 **Responsibilities:** System Design, Implementation in C#
 
