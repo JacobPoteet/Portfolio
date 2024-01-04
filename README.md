@@ -44,6 +44,13 @@ I design and implemented a music player that integrated with Feed.fm's API. Play
 
 **Responsibilities:** Design, Implementation in C#, UI/UX, Integration with 3rd Party API
 
+<table>
+  <tr>
+    <td><img src="Assets\FeedFm_Pod.gif"></td>
+    <td><img src="Assets\FeedFm_Field.gid"></td>
+  </tr>
+</table>
+
 ## Dynamic Bat Visuals
 I designed and implemented a system enabling the creation of new bats by predetermined types such as wood or metal, dictating their distinct mesh design and triggering specific audio events.
 
