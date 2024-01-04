@@ -65,6 +65,9 @@ I developed a system allowing the creation of various bat types like wood or met
   <tr>
     <td><img src="Assets\AI_Image_1.png"></td>
     <td><img src="Assets\AI_Image_2.png"></td>
+  </tr>
+  <tr>
     <td><img src="Assets\AI_Image_3.png"></td>
+    <td><img src="Assets\AI_Image_4.png"></td>
   </tr>
 </table>
