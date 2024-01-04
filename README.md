@@ -47,7 +47,7 @@ I design and implemented a music player that integrated with Feed.fm's API. Play
 <table>
   <tr>
     <td><img src="Assets\FeedFm_Pod.gif"></td>
-    <td><img src="Assets\FeedFm_Field.gid"></td>
+    <td><img src="Assets\FeedFm_Field.gif"></td>
   </tr>
 </table>
 
