@@ -1,5 +1,5 @@
 # Portfolio
-Professional experience as a senior technical designer
+Professional experience as a Senior Technical Designer
 
 # WIN Reality
 ## Team Training
