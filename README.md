@@ -33,7 +33,7 @@ This marked the debut of a groundbreaking multiplayer experience. Users utilize 
 ## Global Leaderboard
 Within the main menu, players can glance to the right and access a global leaderboard showcasing user stats for the current month. This dynamic panel cycles through, highlighting each player along with additional statistics, offering an engaging and comprehensive view of the gaming community's achievements.
 
-**Responsibilities:** System Design, implementation in C#, collaborate with Art on UI/UX
+**Responsibilities:** System Design, implementation in C#, collaborate with the Art team on UI/UX
 
 <img src="Assets\Leaderboard.gif">
 
@@ -56,6 +56,23 @@ I developed a system allowing the creation of various bat types like wood or met
 
 <img src="Assets\BatVisuals.gif">
 <img src="Assets\WoodBatShowcase.png">
+
+<br>
+
+# Heathstone
+## Battle-Ready Decks
+I spearheaded the implementation of Battle-Ready Decks in the store, a first for the game, offering players curated decks optimized for the latest expansion. Developed through data from hundreds of thousands of play sessions, these decks enhance players' collections with competitive viability."
+
+**Responsibilities:** Implementation, design in collaboration with UI/UX Designers 
+
+<img src="Assets\HS_Battle_Ready_Decks.gif">
+
+## In-Game Announcements
+I created a dynamic system to display in-game messages through on server events. The prefab could show a variety of icons and products with a button to see it directly in the shop. 
+
+**Responsibilities:** Implementation, design in collaboration with UI/UX Designers, collaborated with backend engineers
+
+<img src="Assets\HS_Messaging.JPEG">
 
 # Stable Diffusion
 [Custom Comfy UI Workflows](https://github.com/JacobPoteet/ComfyUI_Workflows)
