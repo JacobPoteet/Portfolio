@@ -1,6 +1,25 @@
 # Portfolio
 Professional experience as a Senior Technical Designer
 
+<br>
+
+# Heathstone
+## Battle-Ready Decks
+I spearheaded the implementation of Battle-Ready Decks in the store, a first for the game, offering players curated decks optimized for the latest expansion. Developed through data from hundreds of thousands of play sessions, these decks enhance players' collections with competitive viability.
+
+**Responsibilities:** Implementation, design in collaboration with UI/UX designers 
+
+<img src="Assets\HS_Battle_Ready_Decks.gif">
+
+## In-Game Announcements
+I created a dynamic system to display in-game messages through server events. The prefab could show a variety of icons and products with a button to see them directly in the shop. 
+
+**Responsibilities:** Implementation, design in collaboration with UI/UX designers, collaborated with backend engineers
+
+<img src="Assets\HS_Messaging.JPEG">
+
+<br>
+
 # WIN Reality
 ## Team Training
 Team Training offers an immersive multiplayer experience accommodating up to 100 players engaging in thrilling batting practice battles across diverse game modes. Guided by a dedicated coach, each session is an interactive journey, providing invaluable instructional feedback alongside lively and energizing commentary.
@@ -58,21 +77,6 @@ I developed a system allowing the creation of various bat types like wood or met
 <img src="Assets\WoodBatShowcase.png">
 
 <br>
-
-# Heathstone
-## Battle-Ready Decks
-I spearheaded the implementation of Battle-Ready Decks in the store, a first for the game, offering players curated decks optimized for the latest expansion. Developed through data from hundreds of thousands of play sessions, these decks enhance players' collections with competitive viability."
-
-**Responsibilities:** Implementation, design in collaboration with UI/UX Designers 
-
-<img src="Assets\HS_Battle_Ready_Decks.gif">
-
-## In-Game Announcements
-I created a dynamic system to display in-game messages through on server events. The prefab could show a variety of icons and products with a button to see it directly in the shop. 
-
-**Responsibilities:** Implementation, design in collaboration with UI/UX Designers, collaborated with backend engineers
-
-<img src="Assets\HS_Messaging.JPEG">
 
 # Stable Diffusion
 [Custom Comfy UI Workflows](https://github.com/JacobPoteet/ComfyUI_Workflows)
