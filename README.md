@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://avatars.githubusercontent.com/u/64765148?v=4" width="120" alt="Profile Picture" style="border-radius:50%; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+  <img src="https://avatars.githubusercontent.com/u/64765148?v=4" width="120" alt="Profile Picture">
 </p>
 
 <h1 align="center">Jacob Poteet</h1>
@@ -12,7 +12,7 @@
 
 - [Judas](#judas)
   - [Narrative Design](#narrative-design)
-- [Heathstone](#heathstone)
+- [Hearthstone](#heathstone)
   - [Battle-Ready Decks](#battle-ready-decks)
   - [In-Game Announcements](#in-game-announcements)
 - [WIN Reality](#win-reality)
@@ -48,7 +48,7 @@ I spearheaded the implementation of Battle-Ready Decks in the store—a first fo
 ## In-Game Announcements
 I created a dynamic system to display in-game messages triggered by server events. The prefab could show a variety of icons and products, with a button allowing players to view them directly in the shop.
 
-**Responsibilities:** Implementation, design in collaboration with UI/UX designers, collaborated with backend engineers
+**Responsibilities:** Implementation, design in collaboration with UI/UX designers, collaboration with backend engineers
 
 <img src="Assets\HS_Messaging.JPEG">
 
