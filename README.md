@@ -1,6 +1,6 @@
 
 <p align="center">
-  <img src="https://avatars.githubusercontent.com/u/jacobpoteet" width="120" alt="Profile Picture" style="border-radius:50%">
+  <img src="https://avatars.githubusercontent.com/u/64765148?v=4" width="120" alt="Profile Picture" style="border-radius:50%">
 </p>
 
 <h1 align="center">Jacob Poteet</h1>
