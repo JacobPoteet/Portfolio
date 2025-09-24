@@ -1,7 +1,39 @@
-# Portfolio
-Professional experience as a Senior Technical Designer
+
+<p align="center">
+  <img src="https://avatars.githubusercontent.com/u/jacobpoteet" width="120" alt="Profile Picture" style="border-radius:50%">
+</p>
+
+<h1 align="center">Jacob Poteet</h1>
+<p align="center"><b>Senior Technical Designer</b></p>
+<p align="center">Game Development | Narrative Design | Systems Design</p>
+
+---
+
+## Table of Contents
+
+- [Judas](#judas)
+  - [Narrative Design](#narrative-design)
+- [Heathstone](#heathstone)
+  - [Battle-Ready Decks](#battle-ready-decks)
+  - [In-Game Announcements](#in-game-announcements)
+- [WIN Reality](#win-reality)
+  - [Team Training](#team-training)
+  - [AI Pitcher Images](#ai-pitcher-images)
+  - [Live Pitch](#live-pitch)
+  - [Global Leaderboard](#global-leaderboard)
+  - [Feed.fm Music Streaming](#feedfm-music-streaming)
+  - [Dynamic Bat Visuals](#dynamic-bat-visuals)
+- [Stable Diffusion](#stable-diffusion)
+
+---
 
 <br>
+
+# Judas
+## Narrative Design
+I design, implement, and maintain scripted events, quests, and other narrative content. More details avaliable upon the game's release
+
+<img src="https://images.ctfassets.net/404m4mhku829/3SuLzeVtzu8QoZLBLLdaWp/cbe89d054001f4d2ff6cf3a43800c23a/20250820_Mealha_art_JUDASKEYART_16x9_4k.jpg?w=2560">
 
 # Heathstone
 ## Battle-Ready Decks
