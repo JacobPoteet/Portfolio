@@ -12,7 +12,7 @@
 
 - [Judas](#judas)
   - [Narrative Design](#narrative-design)
-- [Hearthstone](#heathstone)
+- [Hearthstone](#hearthstone)
   - [Battle-Ready Decks](#battle-ready-decks)
   - [In-Game Announcements](#in-game-announcements)
 - [WIN Reality](#win-reality)
