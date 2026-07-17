@@ -3,8 +3,9 @@
 </p>
 
 <h1 align="center">Jacob Poteet</h1>
-<p align="center"><b>Senior Technical Designer</b></p>
+<p align="center"><b>Senior Technical Narrative Designer</b></p>
 <p align="center">Game Development | Narrative Design | Systems Design</p>
+<p align="center">📍 Pittsburgh, PA &nbsp;·&nbsp; <a href="https://jacobpoteet.github.io/Portfolio/">Portfolio Site</a> &nbsp;·&nbsp; <a href="https://github.com/JacobPoteet">GitHub</a></p>
 
 ---
 
@@ -22,7 +23,7 @@
   - [Global Leaderboard](#global-leaderboard)
   - [Feed.fm Music Streaming](#feedfm-music-streaming)
   - [Dynamic Bat Visuals](#dynamic-bat-visuals)
-- [Stable Diffusion](#stable-diffusion)
+- [Personal Projects](#personal-projects)
 
 ---
 
@@ -41,6 +42,8 @@ I design, implement, and maintain scripted events, quests, and other narrative c
 I spearheaded the implementation of Battle-Ready Decks in the store—a first for the game—offering players curated decks optimized for the latest expansion. Developed using data from hundreds of thousands of play sessions, these decks enhance players' collections with competitive, viable options.
 
 **Responsibilities:** Implementation, design in collaboration with UI/UX designers 
+
+**Press & references:** [Blizzard announcement](https://news.blizzard.com/en-us/hearthstone/23665633/quilboar-join-battlegrounds-and-battle-ready-decks) · [Dot Esports](https://dotesports.com/hearthstone/news/everything-you-need-to-know-about-the-new-battle-ready-hearthstone-decks) · [TheGamer](https://www.thegamer.com/hearthstone-battle-ready-decks/) · [Blizzard Watch](https://blizzardwatch.com/2021/05/07/battle-ready-decks/)
 
 <img src="Assets\HS_Battle_Ready_Decks.gif">
 
@@ -117,18 +120,17 @@ I developed a system allowing the creation of various bat types, such as wood or
 
 <br>
 
+---
 
-# Stable Diffusion
-[Custom Comfy UI Workflows](https://github.com/JacobPoteet/ComfyUI_Workflows)
+# Personal Projects
 
-[Civitai Profile](https://civitai.com/user/JacobPoteet/posts)
-<table>
-  <tr>
-    <td><img src="Assets\AI_Image_3.png"></td>
-    <td><img src="Assets\AI_Image_2.png"></td>
-  </tr>
-  <tr>
-    <td><img src="Assets\AI_Image_1.png"></td>
-    <td><img src="Assets\AI_Image_4.png"></td>
-  </tr>
-</table>
+A selection of my latest side projects and experiments on [GitHub](https://github.com/JacobPoteet?tab=repositories).
+
+| Project | Description | Tech |
+| --- | --- | --- |
+| [ExplorerHelper](https://github.com/JacobPoteet/ExplorerHelper) | Clean and organize folders straight from the Windows Explorer right-click menu | C# |
+| [Three Rivers Aerial](https://github.com/JacobPoteet/three-rivers-aerial) | Marketing site for a Pittsburgh drone photography company (Astro + Cloudflare Pages) | Astro |
+| [DraftGame Cards](https://github.com/JacobPoteet/draftgame-cards) | Card database and schema for DraftGame, a card game where drafting *is* the gameplay | TypeScript |
+| [GPX From Photos](https://github.com/JacobPoteet/GPX_From_Photos) | Backfills location history by generating a GPX track from a group of geotagged photos | C# |
+
+<br>
