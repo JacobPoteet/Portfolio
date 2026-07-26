@@ -223,6 +223,193 @@ section { padding: 56px 0; }
 }
 @media (max-width: 640px) { .media-grid { grid-template-columns: 1fr; } }
 
+/* ===========================================================
+   Explorer Helper triage demo
+   Ported from the project page: a 12s pure-CSS loop where three
+   cards swipe (right = keep, left = reject) with stamps and live
+   counters, then a review panel commits and the reject flies into
+   the Recycle Bin. Every element's resting style matches its 0%
+   frame, so prefers-reduced-motion just shows the idle deck.
+   Palette is remapped to portfolio tokens via the locals below.
+   =========================================================== */
+.tr-mock {
+  --tr-bg: var(--bg);
+  --tr-bg-2: var(--bg-elev);
+  --tr-bg-3: #1d2231;
+  --tr-border: var(--border);
+  --tr-muted: var(--text-dim);
+  --tr-ok: #3dd68c;
+  --tr-bad: #ff5c7c;
+  max-width: 660px;
+  margin: 18px auto 0;
+  border: 1px solid var(--tr-border);
+  border-radius: var(--radius-sm);
+  background: var(--tr-bg-2);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+/* Windows-style title bar: icon + title left, caption buttons right */
+.tr-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 6px 6px 14px;
+  background: var(--tr-bg-3);
+  border-bottom: 1px solid var(--tr-border);
+}
+.tr-bar .app-ic { font-size: 0.95rem; }
+.tr-bar .tr-title {
+  color: var(--tr-muted);
+  font-size: 0.85rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.tr-caps { margin-left: auto; display: flex; }
+.tr-cap {
+  width: 38px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  color: var(--tr-muted);
+  font-size: 0.68rem;
+  border-radius: 5px;
+}
+.tr-cap.close { color: var(--text); }
+.tr-mock kbd {
+  font-family: "Cascadia Code", Consolas, monospace;
+  font-size: 0.82em;
+  background: var(--tr-bg-3);
+  border: 1px solid var(--tr-border);
+  border-bottom-width: 2px;
+  border-radius: 6px;
+  padding: 1px 7px;
+  color: var(--text);
+}
+
+.tr-stage { position: relative; height: 360px; background: var(--tr-bg-2); overflow: hidden; }
+.tr-top { display: flex; align-items: center; justify-content: center; gap: 14px; padding: 12px; }
+.tr-pill { border: 1px solid var(--tr-border); border-radius: 999px; padding: 3px 12px; font-size: 0.82rem; font-weight: 600; }
+.tr-pill.rej { background: rgba(255, 92, 124, 0.14); border-color: rgba(255, 92, 124, 0.4); color: var(--tr-bad); }
+.tr-pill.kep { background: rgba(61, 214, 140, 0.14); border-color: rgba(61, 214, 140, 0.4); color: var(--tr-ok); }
+.tr-remaining { color: var(--tr-muted); font-size: 0.8rem; }
+/* Digits stack in one grid cell so they overlay while staying in flow,
+   which keeps them on the text baseline next to the icons. */
+.tr-count { display: inline-grid; min-width: 0.72em; text-align: center; }
+.tr-count span { grid-area: 1 / 1; opacity: 0; animation: 12s ease-in-out infinite; }
+.tr-count .v0 { opacity: 1; }
+
+.tr-deck { position: absolute; inset: 46px 0 0 0; }
+.tr-card {
+  position: absolute; left: 50%; top: 26px; width: 250px; height: 236px; margin-left: -125px;
+  background: var(--tr-bg-3); border: 1px solid var(--tr-border); border-radius: 14px;
+  overflow: hidden; display: flex; flex-direction: column;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+  animation: 12s ease-in-out infinite;
+}
+.tr-face { flex: 1; display: grid; place-items: center; font-size: 3rem; }
+.tr-face.sunset { background: linear-gradient(160deg, rgba(255, 180, 84, 0.22), rgba(232, 121, 185, 0.22)), linear-gradient(180deg, #2b2333, #33202b); }
+.tr-face.blurry { background: linear-gradient(160deg, rgba(72, 85, 99, 0.2), rgba(41, 50, 60, 0.4)), var(--tr-bg); }
+.tr-face.blurry span { filter: blur(3px) saturate(0.7); }
+.tr-face.shot { background: linear-gradient(160deg, rgba(87, 199, 255, 0.2), rgba(72, 198, 239, 0.2)), var(--tr-bg); }
+.tr-name { padding: 9px 12px; font-size: 0.8rem; color: var(--tr-muted); border-top: 1px solid var(--tr-border); background: var(--tr-bg-2); }
+.tr-stamp {
+  position: absolute; top: 20px; font-weight: 800; font-size: 1.35rem; letter-spacing: 0.06em;
+  border: 4px solid; border-radius: 9px; padding: 3px 12px; opacity: 0;
+  animation: 12s ease-in-out infinite;
+}
+.tr-stamp.keep { left: 16px; color: var(--tr-ok); border-color: var(--tr-ok); background: rgba(61, 214, 140, 0.14); transform: rotate(-14deg); }
+.tr-stamp.rej { right: 16px; color: var(--tr-bad); border-color: var(--tr-bad); background: rgba(255, 92, 124, 0.14); transform: rotate(14deg); }
+
+/* Card A: keep. B: reject. C: keep. */
+.tr-a { animation-name: trCardA; z-index: 3; }
+.tr-b { animation-name: trCardB; z-index: 2; transform: scale(0.94) translateY(-14px); opacity: 0.55; }
+.tr-c { animation-name: trCardC; z-index: 1; transform: scale(0.88) translateY(-28px); opacity: 0.3; }
+.tr-a .keep { animation-name: trStampA; }
+.tr-b .rej { animation-name: trStampB; }
+.tr-c .keep { animation-name: trStampC; }
+@keyframes trCardA {
+  0%, 6%   { transform: none; opacity: 1; }
+  13%, 92% { transform: translateX(170%) rotate(18deg); opacity: 0; }
+  93%      { transform: none; opacity: 0; }
+  97%,100% { transform: none; opacity: 1; }
+}
+@keyframes trCardB {
+  0%, 13%  { transform: scale(0.94) translateY(-14px); opacity: 0.55; }
+  16%, 22% { transform: none; opacity: 1; }
+  29%, 92% { transform: translateX(-170%) rotate(-18deg); opacity: 0; }
+  93%      { transform: scale(0.94) translateY(-14px); opacity: 0; }
+  97%,100% { transform: scale(0.94) translateY(-14px); opacity: 0.55; }
+}
+@keyframes trCardC {
+  0%, 16%  { transform: scale(0.88) translateY(-28px); opacity: 0.3; }
+  19%, 29% { transform: scale(0.94) translateY(-14px); opacity: 0.55; }
+  32%, 38% { transform: none; opacity: 1; }
+  45%, 92% { transform: translateX(170%) rotate(18deg); opacity: 0; }
+  93%      { transform: scale(0.88) translateY(-28px); opacity: 0; }
+  97%,100% { transform: scale(0.88) translateY(-28px); opacity: 0.3; }
+}
+@keyframes trStampA { 0%,5% { opacity: 0; } 8%,13% { opacity: 1; } 14%,100% { opacity: 0; } }
+@keyframes trStampB { 0%,20% { opacity: 0; } 23%,29% { opacity: 1; } 30%,100% { opacity: 0; } }
+@keyframes trStampC { 0%,36% { opacity: 0; } 39%,45% { opacity: 1; } 46%,100% { opacity: 0; } }
+
+/* Counters: keep 0>1>2, reject 0>1, remaining 3>2>1>0 */
+.tr-count .v1, .tr-count .v2, .tr-count .v3 { opacity: 0; }
+.kc .v0 { animation-name: trK0; } .kc .v1 { animation-name: trK1; } .kc .v2 { animation-name: trK2; }
+.rc .v0 { animation-name: trR0; } .rc .v1 { animation-name: trR1; }
+.lc .v3 { animation-name: trL3; } .lc .v2 { animation-name: trL2; } .lc .v1 { animation-name: trL1; } .lc .v0 { animation-name: trL0; }
+@keyframes trK0 { 0%,12% { opacity: 1; } 13%,95% { opacity: 0; } 96%,100% { opacity: 1; } }
+@keyframes trK1 { 0%,12% { opacity: 0; } 13%,44% { opacity: 1; } 45%,100% { opacity: 0; } }
+@keyframes trK2 { 0%,44% { opacity: 0; } 45%,95% { opacity: 1; } 96%,100% { opacity: 0; } }
+@keyframes trR0 { 0%,28% { opacity: 1; } 29%,95% { opacity: 0; } 96%,100% { opacity: 1; } }
+@keyframes trR1 { 0%,28% { opacity: 0; } 29%,95% { opacity: 1; } 96%,100% { opacity: 0; } }
+@keyframes trL3 { 0%,12% { opacity: 1; } 13%,95% { opacity: 0; } 96%,100% { opacity: 1; } }
+@keyframes trL2 { 0%,12% { opacity: 0; } 13%,28% { opacity: 1; } 29%,100% { opacity: 0; } }
+@keyframes trL1 { 0%,28% { opacity: 0; } 29%,44% { opacity: 1; } 45%,100% { opacity: 0; } }
+@keyframes trL0 { 0%,44% { opacity: 0; } 45%,95% { opacity: 1; } 96%,100% { opacity: 0; } }
+
+/* "All caught up" beat between the last swipe and the review panel */
+.tr-done { position: absolute; inset: 46px 0 0 0; display: grid; place-items: center; opacity: 0; animation: trDone 12s ease-in-out infinite; }
+.tr-done .big { font-size: 1.25rem; font-weight: 700; }
+.tr-done .sub2 { color: var(--tr-muted); font-size: 0.85rem; text-align: center; }
+@keyframes trDone { 0%,47% { opacity: 0; } 50%,55% { opacity: 1; } 58%,100% { opacity: 0; } }
+
+/* Review + commit */
+.tr-review { position: absolute; inset: 0; z-index: 5; padding: 16px 18px; background: var(--tr-bg-2); opacity: 0; transform: translateY(18px); animation: trReview 12s ease-in-out infinite; }
+@keyframes trReview { 0%,58% { opacity: 0; transform: translateY(18px); } 62%,88% { opacity: 1; transform: none; } 92%,100% { opacity: 0; transform: translateY(18px); } }
+.tr-review h4 { margin: 0 0 12px; font-size: 0.95rem; }
+.tr-piles { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.tr-pile { border: 1px solid var(--tr-border); border-radius: 10px; padding: 10px 12px; background: var(--tr-bg-3); min-height: 118px; }
+.tr-pile h5 { margin: 0 0 8px; font-size: 0.8rem; }
+.tr-pile h5.k { color: var(--tr-ok); }
+.tr-pile h5.r { color: var(--tr-bad); }
+.tr-mini { display: inline-grid; place-items: center; width: 52px; height: 44px; border-radius: 8px; margin-right: 8px; font-size: 1.2rem; }
+.tr-fly { animation: trFly 12s ease-in-out infinite; }
+@keyframes trFly { 0%,70% { transform: none; opacity: 1; } 76%,100% { transform: translate(30px, 64px) scale(0.1); opacity: 0; } }
+.tr-commitrow { display: flex; align-items: center; gap: 12px; margin-top: 14px; }
+.tr-bin { font-size: 1.3rem; animation: trBin 12s ease-in-out infinite; }
+@keyframes trBin { 0%,73% { transform: none; } 75% { transform: scale(1.3); } 78%,100% { transform: none; } }
+.tr-commit { margin-left: auto; background: linear-gradient(180deg, var(--accent), #e79a35); color: #14171f; font-weight: 700; font-size: 0.85rem; border-radius: 8px; padding: 7px 16px; animation: trCommit 12s ease-in-out infinite; }
+@keyframes trCommit { 0%,65% { transform: none; } 67% { transform: scale(0.92); } 69%,100% { transform: none; } }
+.tr-status { color: var(--tr-muted); font-size: 0.8rem; opacity: 0; animation: trStatus 12s ease-in-out infinite; }
+@keyframes trStatus { 0%,77% { opacity: 0; } 81%,88% { opacity: 1; } 92%,100% { opacity: 0; } }
+
+.tr-hints { text-align: center; color: var(--tr-muted); font-size: 0.85rem; margin: 12px 0 0; }
+@media (max-width: 560px) {
+  /* The deck is a fixed pixel width so the swipe keyframes stay centred
+     (they animate transform, so translateX(-50%) centring is unavailable).
+     Shrink card and stage together to keep breathing room in the frame. */
+  .tr-stage { height: 330px; }
+  .tr-card { width: 208px; margin-left: -104px; height: 214px; }
+  .tr-card .tr-face { font-size: 2.5rem; }
+  .tr-stamp { font-size: 1.15rem; border-width: 3px; }
+  .tr-status { display: none; }
+  .tr-hints { font-size: 0.8rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tr-mock, .tr-mock * { animation: none !important; }
+}
+
 .refs {
   display: flex;
   flex-wrap: wrap;

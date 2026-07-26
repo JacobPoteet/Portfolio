@@ -192,13 +192,81 @@
         </div>
       </div>
 
-      <div class="proj-grid">
-        <a class="proj" href="https://github.com/JacobPoteet/ExplorerHelper" target="_blank" rel="noopener">
-          <div class="proj-top"><h3>ExplorerHelper</h3><span class="lang">C#</span></div>
-          <p>Clean and organize folders straight from the Windows Explorer right-click menu.</p>
-          <span class="proj-link">View repo →</span>
-        </a>
+      <div class="feature">
+        <h3>Explorer Helper</h3>
+        <p class="meta">Design · Engineering · Windows tooling</p>
+        <p>A Windows utility for clearing out messy folders. Right-click any folder in Explorer, pick "Clean this folder," and review its contents one file at a time. Every file opens in a live preview as you reach it, whether that's an image, a PDF, or a video or audio track you can scrub through, so you can judge each one without leaving the app and flag it keep, reject, or skip. A folder that would take an hour of manual sorting takes a few minutes of swiping.</p>
+        <p>The whole triage loop runs off the arrow keys, so a folder can be cleared without touching the mouse, and quick rename with automatic collision numbering handles tidying along the way. Nothing is destructive: rejects route to the Recycle Bin rather than being erased, and renames, deletes, and entire commits all undo in one keystroke. Filter and sort by name, size, date, or type before you start, then review both piles before committing. Built on .NET 8 for Windows 10 and 11, MIT licensed, and installs per user with no admin rights required.</p>
+        <div class="refs">
+          <span class="ref-label">Links:</span>
+          <a class="chip" href="https://jacobpoteet.github.io/ExplorerHelper/" target="_blank" rel="noopener">Project page</a>
+          <a class="chip" href="https://github.com/JacobPoteet/ExplorerHelper/releases/latest" target="_blank" rel="noopener">Download</a>
+          <a class="chip" href="https://github.com/JacobPoteet/ExplorerHelper" target="_blank" rel="noopener">Repo</a>
+        </div>
 
+        <!-- Triage demo: pure-CSS loop ported from the project page -->
+        <div class="tr-mock" role="img" aria-label="Animation of triage mode: file cards swipe right to keep and left to reject with stamps, counters tick up, then a review screen applies the changes, sending the reject to the Recycle Bin.">
+          <div class="tr-bar">
+            <span class="app-ic">🧹</span>
+            <span class="tr-title">Explorer Helper · Triage</span>
+            <span class="tr-caps" aria-hidden="true"><span class="tr-cap">─</span><span class="tr-cap">□</span><span class="tr-cap close">✕</span></span>
+          </div>
+          <div class="tr-stage">
+            <div class="tr-top">
+              <span class="tr-pill rej">✗ <span class="tr-count rc"><span class="v0">0</span><span class="v1">1</span></span></span>
+              <span class="tr-remaining"><span class="tr-count lc"><span class="v3">3</span><span class="v2">2</span><span class="v1">1</span><span class="v0">0</span></span> left</span>
+              <span class="tr-pill kep">✓ <span class="tr-count kc"><span class="v0">0</span><span class="v1">1</span><span class="v2">2</span></span></span>
+            </div>
+
+            <div class="tr-deck">
+              <div class="tr-card tr-c">
+                <div class="tr-face shot"><span>🖼</span></div>
+                <div class="tr-name">screenshot 2026-07-04.png</div>
+                <div class="tr-stamp keep">KEEP</div>
+              </div>
+              <div class="tr-card tr-b">
+                <div class="tr-face blurry"><span>🖼</span></div>
+                <div class="tr-name">IMG_0421 (blurry).jpg</div>
+                <div class="tr-stamp rej">REJECT</div>
+              </div>
+              <div class="tr-card tr-a">
+                <div class="tr-face sunset"><span>🎬</span></div>
+                <div class="tr-name">sunset_drone_4k.mp4</div>
+                <div class="tr-stamp keep">KEEP</div>
+              </div>
+              <div class="tr-done">
+                <div>
+                  <div class="big">All caught up ✓</div>
+                  <div class="sub2">2 keep · 1 reject · take one last look</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="tr-review">
+              <h4>One last look before anything happens</h4>
+              <div class="tr-piles">
+                <div class="tr-pile">
+                  <h5 class="k">✓ Keep (2)</h5>
+                  <span class="tr-mini tr-face sunset">🎬</span>
+                  <span class="tr-mini tr-face shot">🖼</span>
+                </div>
+                <div class="tr-pile">
+                  <h5 class="r">✗ Reject (1)</h5>
+                  <span class="tr-mini tr-face blurry tr-fly"><span>🖼</span></span>
+                </div>
+              </div>
+              <div class="tr-commitrow">
+                <span class="tr-bin">🗑️</span>
+                <span class="tr-status">Done · 1 recycled · 2 kept</span>
+                <span class="tr-commit">Commit…</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="tr-hints">Drag with the mouse or fly with the keyboard: <kbd>←</kbd> reject · <kbd>→</kbd> keep · <kbd>↓</kbd> skip · <kbd>Ctrl</kbd>+<kbd>Z</kbd> undo.</p>
+      </div>
+
+      <div class="proj-grid">
         <a class="proj" href="https://github.com/JacobPoteet/three-rivers-aerial" target="_blank" rel="noopener">
           <div class="proj-top"><h3>Three Rivers Aerial</h3><span class="lang">Astro</span></div>
           <p>Marketing site for a Pittsburgh drone photography company, built with Astro and Cloudflare Pages.</p>
