@@ -272,6 +272,63 @@
         <p class="tr-hints">Drag with the mouse or fly with the keyboard: <kbd>←</kbd> reject · <kbd>→</kbd> keep · <kbd>↓</kbd> skip · <kbd>Ctrl</kbd>+<kbd>Z</kbd> undo.</p>
       </div>
 
+      <div class="feature">
+        <h3>GitView</h3>
+        <p class="meta">Design · Engineering · Rust and TypeScript</p>
+        <p>A Windows git client designed for developers who switch between repositories and like to utilize the terminal. Where other clients open one repository at a time, GitView's home screen is the whole fleet: a scanner reads the branch, ahead/behind, dirty files, and merged branches for every project and streams the rows in as it goes, so the first screen answers which projects need attention today. Each repository gets its own persistent PowerShell session that survives switching away, so a dev server keeps running while you work somewhere else.</p>
+        <p>Every button shows the command it is about to run. Command blocks mark each command's exit code in the scrollback, printed ports become clickable chips, and task discovery finds the scripts in package.json, Cargo.toml, Makefiles, and more. A GitHub inbox pulls pull requests, issues, and check runs for the whole fleet in one query through gh, and the PR desk pushes, opens, watches, and merges without the browser. Built on Tauri v2 with a React frontend and a Rust backend: repository reads go through libgit2 in process, and anything that touches a remote shells out to git.exe so credential helpers and SSH agents keep working. MIT licensed.</p>
+        <div class="refs">
+          <span class="ref-label">Links:</span>
+          <a class="chip" href="https://jacobpoteet.github.io/GitView/" target="_blank" rel="noopener">Project page</a>
+          <a class="chip" href="https://github.com/JacobPoteet/GitView/releases/latest" target="_blank" rel="noopener">Download</a>
+          <a class="chip" href="https://github.com/JacobPoteet/GitView" target="_blank" rel="noopener">Repo</a>
+        </div>
+
+        <!-- Fleet screen mock: static, adapted from the project page hero -->
+        <div class="gv-mock" role="img" aria-label="GitView's home screen: a fleet list of repositories with branch and ahead/behind status on the left, a repository's terminal with a command block in the middle, and its discovered tasks and changed files on the right.">
+          <div class="gv-bar">
+            <span class="gv-brand">GitView</span>
+            <span class="gv-path">F:\GitHub</span>
+            <span class="gv-status"><span class="gv-n">11 repos</span><span class="gv-ok">● all fetched</span><span class="gv-kbd"><kbd>Ctrl</kbd>+<kbd>K</kbd></span></span>
+          </div>
+          <div class="gv-body">
+            <div class="gv-side">
+              <div class="gv-hdr"><span>Pinned</span><span>3</span></div>
+              <div class="gv-repo sel"><span class="n">📌 inbox-app</span><span class="c"><span class="gv-tag up">↑3</span><span class="gv-tag dirty">3 dirty</span></span><span class="b">feat/inbox-filters</span></div>
+              <div class="gv-repo"><span class="n">📌 lunch-special</span><span class="c"><span class="gv-tag dn">↓2</span></span><span class="b">main</span></div>
+              <div class="gv-repo"><span class="n">📌 portfolio</span><span class="c"><span class="gv-tag">✓</span></span><span class="b">main</span></div>
+              <div class="gv-hdr"><span>Fleet</span><span>8</span></div>
+              <div class="gv-repo"><span class="n">explorer-helper</span><span class="c"><span class="gv-tag dn">↓5</span></span><span class="b">main</span></div>
+              <div class="gv-repo"><span class="n">draftgame-cards</span><span class="c"><span class="gv-tag merged">1 merged</span></span><span class="b">main</span></div>
+              <div class="gv-repo"><span class="n">gpx-from-photos</span><span class="c"><span class="gv-tag">✓</span></span><span class="b">main</span></div>
+              <div class="gv-repo"><span class="n">three-rivers-aerial</span><span class="c"><span class="gv-tag dn">↓1</span></span><span class="b">main</span></div>
+            </div>
+            <div class="gv-term">
+              <div class="gv-graphbar"><span class="br">feat/inbox-filters</span><span class="vs">↑3 ↓0 vs origin/main</span></div>
+              <pre class="gv-tbody"><span class="p">PS F:\GitHub\inbox-app&gt;</span> <span class="cmd">npm run dev</span>
+  VITE v5.4  ready in 412 ms
+  ➜  Local: <span class="ok">http://localhost:5183/</span>
+<span class="p">PS F:\GitHub\inbox-app&gt;</span> <span class="cmd">git fetch --prune</span>
+From github.com:JacobPoteet/inbox-app
+ - [deleted]  (none) -&gt; origin/fix/scroll-jump
+<span class="p">PS F:\GitHub\inbox-app&gt;</span> <span class="cur"></span></pre>
+              <div class="gv-blockbar"><span class="bar ok"></span><span>git fetch --prune</span><span class="exit">exit 0</span><span class="gv-chip">localhost:5183 ↗</span></div>
+            </div>
+            <div class="gv-right">
+              <div class="gv-hdr"><span>Tasks</span><span>npm</span></div>
+              <div class="gv-task">dev <span>npm run dev</span></div>
+              <div class="gv-task">build <span>npm run build</span></div>
+              <div class="gv-task">test <span>npm test</span></div>
+              <div class="gv-hdr gv-files"><span>Changes</span><span>3</span></div>
+              <div class="gv-file"><b class="m">M</b>src/components/InboxPane.tsx</div>
+              <div class="gv-file"><b class="m">M</b>src/lib/api.ts</div>
+              <div class="gv-file"><b class="a">A</b>src/lib/filters.ts</div>
+            </div>
+          </div>
+        </div>
+        <p class="tr-hints">Hover any button to read its command · click to run it · <kbd>Shift</kbd>+click to type it at the prompt instead.</p>
+      </div>
+
       <div class="proj-grid">
         <a class="proj" href="https://github.com/JacobPoteet/three-rivers-aerial" target="_blank" rel="noopener">
           <div class="proj-top"><h3>Three Rivers Aerial</h3><span class="lang">Astro</span></div>

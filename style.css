@@ -410,6 +410,171 @@ section { padding: 56px 0; }
   .tr-mock, .tr-mock * { animation: none !important; }
 }
 
+/* ===========================================================
+   GitView fleet mock
+   A static three-column snapshot of the home screen (fleet list,
+   repository terminal with a command block, tasks and changes),
+   adapted from the project page hero and remapped to portfolio
+   tokens. Columns drop off as the viewport narrows.
+   =========================================================== */
+.gv-mock {
+  --gv-bg: var(--bg);
+  --gv-bg-2: var(--bg-elev);
+  --gv-bg-3: #1d2231;
+  --gv-border: var(--border);
+  --gv-muted: var(--text-dim);
+  --gv-faint: var(--text-faint);
+  --gv-ok: #3dd68c;
+  --gv-warn: var(--accent);
+  --gv-info: var(--accent-2);
+  --gv-mono: "Cascadia Code", Consolas, ui-monospace, monospace;
+  max-width: 760px;
+  margin: 18px auto 0;
+  border: 1px solid var(--gv-border);
+  border-radius: var(--radius-sm);
+  background: var(--gv-bg);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  font-size: 12px;
+  line-height: 1.5;
+}
+.gv-mock kbd {
+  font-family: var(--gv-mono);
+  font-size: 0.85em;
+  background: var(--gv-bg-3);
+  border: 1px solid var(--gv-border);
+  border-bottom-width: 2px;
+  border-radius: 5px;
+  padding: 0 5px;
+  color: var(--text);
+}
+.gv-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 36px;
+  padding: 0 14px;
+  background: var(--gv-bg-3);
+  border-bottom: 1px solid var(--gv-border);
+}
+.gv-brand { font-weight: 700; color: var(--text); }
+.gv-path { color: var(--gv-faint); font-family: var(--gv-mono); font-size: 11px; }
+.gv-status { margin-left: auto; display: flex; gap: 12px; align-items: center; color: var(--gv-faint); font-size: 11px; white-space: nowrap; }
+.gv-status .gv-ok { color: var(--gv-ok); }
+.gv-body { display: grid; grid-template-columns: 200px 1fr 190px; min-height: 330px; }
+.gv-side { border-right: 1px solid var(--gv-border); padding: 8px; }
+.gv-right { border-left: 1px solid var(--gv-border); padding: 8px; }
+.gv-hdr {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 8px 6px;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gv-faint);
+}
+.gv-hdr.gv-files { margin-top: 10px; }
+.gv-repo {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1px 8px;
+  padding: 6px 8px;
+  border-radius: 7px;
+}
+.gv-repo.sel { background: var(--accent-soft); box-shadow: inset 2px 0 0 var(--accent); }
+.gv-repo .n { font-weight: 600; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.gv-repo .b { grid-column: 1; color: var(--gv-faint); font-family: var(--gv-mono); font-size: 10.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.gv-repo .c { grid-row: 1 / 3; grid-column: 2; align-self: center; display: flex; gap: 4px; }
+.gv-tag {
+  font-family: var(--gv-mono);
+  font-size: 10px;
+  padding: 0 5px;
+  border-radius: 4px;
+  border: 1px solid var(--gv-border);
+  background: var(--gv-bg-2);
+  color: var(--gv-muted);
+  white-space: nowrap;
+}
+.gv-tag.up { color: var(--gv-ok); border-color: rgba(61, 214, 140, 0.35); }
+.gv-tag.dn { color: var(--gv-warn); border-color: rgba(255, 180, 84, 0.35); }
+.gv-tag.dirty { color: var(--gv-info); border-color: rgba(87, 199, 255, 0.35); }
+.gv-tag.merged { color: #c59cff; border-color: rgba(197, 156, 255, 0.35); }
+.gv-term { display: flex; flex-direction: column; background: var(--gv-bg); min-width: 0; }
+.gv-graphbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 36px;
+  padding: 0 12px;
+  border-bottom: 1px solid var(--gv-border);
+  color: var(--gv-muted);
+  font-size: 11px;
+}
+.gv-graphbar .br { font-family: var(--gv-mono); color: var(--text); display: flex; align-items: center; gap: 6px; }
+.gv-graphbar .br::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--gv-info); box-shadow: 0 0 8px var(--gv-info); }
+.gv-graphbar .vs { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.gv-tbody {
+  flex: 1;
+  margin: 0;
+  padding: 12px 14px;
+  font-family: var(--gv-mono);
+  font-size: 11.5px;
+  line-height: 1.7;
+  color: var(--gv-muted);
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+.gv-tbody .p { color: var(--gv-info); }
+.gv-tbody .cmd { color: var(--text); }
+.gv-tbody .ok { color: var(--gv-ok); }
+.gv-tbody .cur { display: inline-block; width: 7px; height: 13px; background: var(--text); vertical-align: -2px; animation: gvBlink 1s steps(1) infinite; }
+@keyframes gvBlink { 50% { opacity: 0; } }
+.gv-blockbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 32px;
+  padding: 0 12px;
+  border-top: 1px solid var(--gv-border);
+  background: var(--gv-bg-2);
+  font-size: 11px;
+  color: var(--gv-muted);
+  font-family: var(--gv-mono);
+}
+.gv-blockbar > span { white-space: nowrap; }
+.gv-blockbar .bar { width: 3px; height: 16px; border-radius: 2px; flex: none; }
+.gv-blockbar .bar.ok { background: var(--gv-ok); }
+.gv-blockbar .exit { color: var(--gv-faint); }
+.gv-chip {
+  margin-left: auto;
+  padding: 1px 8px;
+  border-radius: 5px;
+  border: 1px solid rgba(87, 199, 255, 0.4);
+  background: rgba(87, 199, 255, 0.12);
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.gv-task { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 5px 8px; border-radius: 6px; color: var(--text); }
+.gv-task span { font-family: var(--gv-mono); font-size: 10px; color: var(--gv-faint); white-space: nowrap; }
+.gv-file { display: flex; gap: 7px; padding: 3px 8px; font-family: var(--gv-mono); font-size: 10.5px; color: var(--gv-muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.gv-file b { font-weight: 600; width: 10px; flex: none; }
+.gv-file b.m { color: var(--gv-warn); }
+.gv-file b.a { color: var(--gv-ok); }
+@media (max-width: 720px) {
+  .gv-body { grid-template-columns: 180px 1fr; }
+  .gv-right { display: none; }
+}
+@media (max-width: 520px) {
+  .gv-body { grid-template-columns: 1fr; }
+  .gv-side { display: none; }
+  .gv-path, .gv-kbd { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .gv-mock .cur { animation: none; }
+}
+
 .refs {
   display: flex;
   flex-wrap: wrap;
