@@ -236,6 +236,9 @@ section, .hero { scroll-margin-top: 64px; }
   border: 1px solid var(--border);
   width: 100%;
 }
+.media-link { display: block; border-radius: var(--radius-sm); }
+.media-link img { transition: border-color 0.16s ease; }
+.media-link:hover img { border-color: var(--text-faint); }
 .media-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
