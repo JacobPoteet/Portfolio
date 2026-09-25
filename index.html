@@ -329,6 +329,23 @@ From github.com:JacobPoteet/inbox-app
         <p class="tr-hints">Hover any button to read its command · click to run it · <kbd>Shift</kbd>+click to type it at the prompt instead.</p>
       </div>
 
+      <div class="feature">
+        <h3>Modern Monitor Switcher</h3>
+        <p class="meta">Design · Engineering · Rust and Tauri</p>
+        <p>A Windows utility that saves monitor arrangements as named profiles, like Play, Work, or Couch, and switches between them in one click. It started with two computers sharing one set of monitors: when the work laptop comes on, the personal PC releases two of its three displays so they pick up the other input on their own, then takes them back at the end of the day. Doing that through Display settings every time meant disconnecting screens one by one, finding the new main display, and undoing it all again that night. The work computer needs nothing installed.</p>
+        <p>Profiles switch from the tray menu, a global hotkey that works mid-game, or the <code>msw</code> command line, which runs without the app open and fits on a Stream Deck button. Monitors can be named so profiles read "Left, Middle" instead of model numbers, and each profile is drawn as the screens it turns on. Under the hood, a profile is a captured topology from the Windows CCD API. Adapter IDs change on every boot and driver update, so restoring one means re-matching the saved layout against the machine as it is now, and every candidate is validated with Windows before anything changes on screen. Built in Rust with a Tauri tray app, it starts with Windows, installs per user with no admin prompt, and updates itself. MPL 2.0 licensed.</p>
+        <div class="refs">
+          <span class="ref-label">Links:</span>
+          <a class="chip" href="https://jacobpoteet.github.io/ModernMonitorSwitcher/" target="_blank" rel="noopener">Project page</a>
+          <a class="chip" href="https://github.com/JacobPoteet/ModernMonitorSwitcher/releases/latest" target="_blank" rel="noopener">Download</a>
+          <a class="chip" href="https://github.com/JacobPoteet/ModernMonitorSwitcher" target="_blank" rel="noopener">Repo</a>
+        </div>
+        <div class="media media-grid">
+          <img loading="lazy" src="https://jacobpoteet.github.io/ModernMonitorSwitcher/screenshots/profiles.png" alt="The Modern Monitor Switcher window, showing four saved profiles, each drawn as the monitors it turns on" />
+          <img loading="lazy" src="https://jacobpoteet.github.io/ModernMonitorSwitcher/screenshots/displays-dark.png" alt="The Displays page in dark mode: three monitors named Left, Middle, and Right, with the model and resolution of each" />
+        </div>
+      </div>
+
       <div class="proj-grid">
         <a class="proj" href="https://github.com/JacobPoteet/three-rivers-aerial" target="_blank" rel="noopener">
           <div class="proj-top"><h3>Three Rivers Aerial</h3><span class="lang">Astro</span></div>
