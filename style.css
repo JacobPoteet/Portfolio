@@ -22,7 +22,9 @@
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
 
 body {
   margin: 0;
@@ -50,7 +52,7 @@ body::before {
 a { color: var(--accent-2); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
-img { max-width: 100%; display: block; }
+img { max-width: 100%; height: auto; display: block; }
 
 .wrap {
   max-width: var(--maxw);
@@ -92,6 +94,22 @@ img { max-width: 100%; display: block; }
 }
 .nav-links a { color: var(--text-dim); }
 .nav-links a:hover { color: var(--text); text-decoration: none; }
+/* Scrollspy: set by the script at the bottom of index.html */
+.nav-links a:not(.nav-cta) { position: relative; transition: color 0.2s ease; }
+.nav-links a:not(.nav-cta)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -4px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transition: transform 0.25s ease;
+}
+.nav-links a.is-active { color: var(--text); }
+.nav-links a.is-active::after { transform: scaleX(1); }
 .nav-links .nav-cta {
   color: var(--bg);
   background: var(--accent);
@@ -160,6 +178,8 @@ img { max-width: 100%; display: block; }
 
 /* ---------- Sections ---------- */
 section { padding: 56px 0; }
+/* Anchor jumps land below the sticky nav instead of under it */
+section, .hero { scroll-margin-top: 64px; }
 .section-head {
   display: flex;
   align-items: baseline;
@@ -598,14 +618,16 @@ section { padding: 56px 0; }
 }
 .chip:hover { background: rgba(255, 180, 84, 0.2); text-decoration: none; }
 
-/* Judas hero image */
-.judas-banner img {
-  width: 100%;
+/* Judas hero image. The frame clips so the image can drift inside it
+   on scroll (see the scroll experience block below). */
+.judas-banner {
+  margin-top: 20px;
   border-radius: var(--radius);
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
-  margin-top: 20px;
+  overflow: hidden;
 }
+.judas-banner img { width: 100%; }
 
 /* ---------- Project grid ---------- */
 .proj-grid {
@@ -661,6 +683,92 @@ footer .foot-links {
   gap: 20px;
   justify-content: center;
   margin-bottom: 16px;
+}
+
+/* ===========================================================
+   Scroll experience
+   Native scroll-driven animations, so there is no library and no
+   scroll hijacking: the page scrolls at its normal speed and these
+   only scrub along with it. Browsers without animation-timeline, and
+   anyone who prefers reduced motion, get the static page as before.
+   Reveals animate the individual translate/scale properties rather
+   than transform, so card hover lifts keep working after a reveal.
+   =========================================================== */
+
+/* Paused by the script while a looping mock is off screen */
+.is-offscreen * { animation-play-state: paused !important; }
+
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+
+    /* Reading progress: a hairline under the nav, amber into cyan */
+    .nav::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -1px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      transform-origin: 0 50%;
+      transform: scaleX(0);
+      animation: sxProgress linear both;
+      animation-timeline: scroll(root);
+    }
+    @keyframes sxProgress { to { transform: scaleX(1); } }
+
+    /* Hero: the intro lags behind and fades as it leaves, so the
+       work scrolls up over it */
+    .hero { view-timeline: --sx-hero block; }
+    .hero .wrap {
+      animation: sxHeroOut linear both;
+      animation-timeline: --sx-hero;
+      animation-range: exit 0% exit 100%;
+    }
+    @keyframes sxHeroOut {
+      to { opacity: 0; translate: 0 70px; scale: 0.96; }
+    }
+
+    /* Judas key art: slow drift inside its frame while it crosses
+       the viewport */
+    .judas-banner { view-timeline: --sx-judas block; }
+    .judas-banner img {
+      animation: sxDrift linear both;
+      animation-timeline: --sx-judas;
+      animation-range: cover 0% cover 100%;
+    }
+    @keyframes sxDrift {
+      from { scale: 1.14; translate: 0 -5%; }
+      to   { scale: 1.14; translate: 0 5%; }
+    }
+
+    /* Section intros and cards rise in over their first 220px on
+       screen, then stay put. A fixed length keeps tall cards from
+       sitting half-faded while they fill the screen. */
+    .section-head,
+    .section-sub,
+    .feature,
+    .proj {
+      animation: sxRise ease-out both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 220px;
+    }
+    @keyframes sxRise {
+      from { opacity: 0; translate: 0 36px; scale: 0.98; }
+    }
+
+    /* Media gets a second, smaller beat inside its card */
+    .feature .media img,
+    .tr-mock,
+    .gv-mock {
+      animation: sxMedia ease-out both;
+      animation-timeline: view();
+      animation-range: entry 10% entry 260px;
+    }
+    @keyframes sxMedia {
+      from { opacity: 0.2; translate: 0 24px; }
+    }
+  }
 }
 
 @media (max-width: 680px) {
