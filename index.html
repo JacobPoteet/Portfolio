@@ -348,6 +348,21 @@ From github.com:JacobPoteet/inbox-app
         </div>
       </div>
 
+      <div class="feature">
+        <h3>DynamicResume</h3>
+        <p class="meta">Design · Engineering · Python, Typst, and Claude Code</p>
+        <p>A local app that tailors a one-page resume and matching cover letter to each job listing. Every position, bullet, skill, and project I could show lives in one master file, far more than fits on a page, with tags and a priority on each bullet. An application is a few lines that say which bullets to show, in what order, and how to reword one for that listing, so improving a bullet in the master improves it in every application.</p>
+        <p>Paste a listing and the app runs Claude Code headlessly with read-only access. It reads the master and the listing, picks and orders the bullets, writes a headline and cover letter, breaks the listing into requirements, and lists anything the master can't back up, and every bullet it names is checked against the master before anything is written. In the editor, each requirement is a chip that turns green when a selected bullet covers it, beside a live Typst preview and a meter showing how much of the page is left. Builds warn when a resume runs past one page and flag filler phrases, and the templates are checked with text extraction so they parse cleanly in applicant tracking systems. Career data stays in gitignored files on your own machine; the public repo ships a fictional demo.</p>
+        <div class="refs">
+          <span class="ref-label">Links:</span>
+          <a class="chip" href="https://github.com/JacobPoteet/DynamicResume" target="_blank" rel="noopener">Repo</a>
+        </div>
+        <div class="media media-grid">
+          <img loading="lazy" width="2160" height="1350" src="Assets/DynamicResume_Editor.png" alt="The DynamicResume editor on demo data: listing requirements as green chips above the bullet list, with a live one-page resume preview and fill meter" />
+          <img loading="lazy" width="2160" height="1350" src="Assets/DynamicResume_Listing.png" alt="The Listing tab: Claude's notes on which bullets it led with, the gaps the master can't back up, and the editable requirement list" />
+        </div>
+      </div>
+
       <div class="proj-grid">
         <a class="proj" href="https://github.com/JacobPoteet/three-rivers-aerial" target="_blank" rel="noopener">
           <div class="proj-top"><h3>Three Rivers Aerial</h3><span class="lang">Astro</span></div>
