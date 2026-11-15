@@ -527,7 +527,7 @@ section, .hero { scroll-margin-top: 64px; }
 .tr-status { color: var(--tr-muted); font-size: 0.8rem; opacity: 0; animation: trStatus 12s ease-in-out infinite; }
 @keyframes trStatus { 0%,77% { opacity: 0; } 81%,88% { opacity: 1; } 92%,100% { opacity: 0; } }
 
-.tr-hints { text-align: center; color: var(--tr-muted); font-size: 0.85rem; margin: 12px 0 0; }
+.feature .tr-hints { text-align: center; color: var(--tr-muted); font-size: 0.85rem; margin: 12px 0 0; max-width: none; }
 @media (max-width: 560px) {
   /* The deck is a fixed pixel width so the swipe keyframes stay centred
      (they animate transform, so translateX(-50%) centring is unavailable).

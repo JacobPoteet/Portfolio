@@ -198,7 +198,7 @@
       </div>
       <p class="section-sub">A selection of my latest side projects and experiments. More on <a href="https://github.com/JacobPoteet?tab=repositories" target="_blank" rel="noopener">GitHub</a>.</p>
 
-      <div class="feature split">
+      <div class="feature wide">
         <div class="feature-text">
           <h3>Lunch Special</h3>
           <ul class="tags"><li>Design</li><li>Engineering</li><li>Art direction</li></ul>
@@ -216,7 +216,62 @@
         </div>
       </div>
 
-      <div class="feature split">
+      <div class="feature wide">
+        <h3>GitView</h3>
+        <ul class="tags"><li>Design</li><li>Engineering</li><li>Rust</li><li>TypeScript</li></ul>
+        <p>A Windows git client for people who juggle many repositories and still type their own git commands. The home screen shows every repo's branch and uncommitted work at once, so you can see which projects need attention, and each repo keeps its own shell running in the background. Every button shows the command it will run before you click it.</p>
+        <div class="refs">
+          <a class="chip" href="https://jacobpoteet.github.io/GitView/" target="_blank" rel="noopener">Project page</a>
+          <a class="chip" href="https://github.com/JacobPoteet/GitView/releases/latest" target="_blank" rel="noopener">Download</a>
+          <a class="chip" href="https://github.com/JacobPoteet/GitView" target="_blank" rel="noopener">Repo</a>
+        </div>
+
+        <!-- Fleet screen mock: static, adapted from the project page hero -->
+        <div class="gv-mock" role="img" aria-label="GitView's home screen: a fleet list of repositories with branch and ahead/behind status on the left, a repository's terminal with a command block in the middle, and its discovered tasks and changed files on the right.">
+          <div class="gv-bar">
+            <span class="gv-brand">GitView</span>
+            <span class="gv-path">F:\GitHub</span>
+            <span class="gv-status"><span class="gv-n">11 repos</span><span class="gv-ok">● all fetched</span><span class="gv-kbd"><kbd>Ctrl</kbd>+<kbd>K</kbd></span></span>
+          </div>
+          <div class="gv-body">
+            <div class="gv-side">
+              <div class="gv-hdr"><span>Pinned</span><span>3</span></div>
+              <div class="gv-repo sel"><span class="n">📌 inbox-app</span><span class="c"><span class="gv-tag up">↑3</span><span class="gv-tag dirty">3 dirty</span></span><span class="b">feat/inbox-filters</span></div>
+              <div class="gv-repo"><span class="n">📌 lunch-special</span><span class="c"><span class="gv-tag dn">↓2</span></span><span class="b">main</span></div>
+              <div class="gv-repo"><span class="n">📌 portfolio</span><span class="c"><span class="gv-tag">✓</span></span><span class="b">main</span></div>
+              <div class="gv-hdr"><span>Fleet</span><span>8</span></div>
+              <div class="gv-repo"><span class="n">explorer-helper</span><span class="c"><span class="gv-tag dn">↓5</span></span><span class="b">main</span></div>
+              <div class="gv-repo"><span class="n">modern-monitor-switcher</span><span class="c"><span class="gv-tag merged">1 merged</span></span><span class="b">main</span></div>
+              <div class="gv-repo"><span class="n">gpx-from-photos</span><span class="c"><span class="gv-tag">✓</span></span><span class="b">main</span></div>
+              <div class="gv-repo"><span class="n">three-rivers-aerial</span><span class="c"><span class="gv-tag dn">↓1</span></span><span class="b">main</span></div>
+            </div>
+            <div class="gv-term">
+              <div class="gv-graphbar"><span class="br">feat/inbox-filters</span><span class="vs">↑3 ↓0 vs origin/main</span></div>
+              <pre class="gv-tbody"><span class="p">PS F:\GitHub\inbox-app&gt;</span> <span class="cmd">npm run dev</span>
+  VITE v5.4  ready in 412 ms
+  ➜  Local: <span class="ok">http://localhost:5183/</span>
+<span class="p">PS F:\GitHub\inbox-app&gt;</span> <span class="cmd">git fetch --prune</span>
+From github.com:JacobPoteet/inbox-app
+ - [deleted]  (none) -&gt; origin/fix/scroll-jump
+<span class="p">PS F:\GitHub\inbox-app&gt;</span> <span class="cur"></span></pre>
+              <div class="gv-blockbar"><span class="bar ok"></span><span>git fetch --prune</span><span class="exit">exit 0</span><span class="gv-chip">localhost:5183 ↗</span></div>
+            </div>
+            <div class="gv-right">
+              <div class="gv-hdr"><span>Tasks</span><span>npm</span></div>
+              <div class="gv-task">dev <span>npm run dev</span></div>
+              <div class="gv-task">build <span>npm run build</span></div>
+              <div class="gv-task">test <span>npm test</span></div>
+              <div class="gv-hdr gv-files"><span>Changes</span><span>3</span></div>
+              <div class="gv-file"><b class="m">M</b>src/components/InboxPane.tsx</div>
+              <div class="gv-file"><b class="m">M</b>src/lib/api.ts</div>
+              <div class="gv-file"><b class="a">A</b>src/lib/filters.ts</div>
+            </div>
+          </div>
+        </div>
+        <p class="tr-hints">Hover any button to read its command · click to run it · <kbd>Shift</kbd>+click to type it at the prompt instead.</p>
+      </div>
+
+      <div class="feature wide">
         <div class="feature-text">
           <h3>Explorer Helper</h3>
           <ul class="tags"><li>Design</li><li>Engineering</li><li>Windows tooling</li></ul>
@@ -293,76 +348,6 @@
       </div>
 
       <div class="feature wide">
-        <h3>GitView</h3>
-        <ul class="tags"><li>Design</li><li>Engineering</li><li>Rust</li><li>TypeScript</li></ul>
-        <p>A Windows git client for people who juggle many repositories and still type their own git commands. The home screen shows every repo's branch and uncommitted work at once, so you can see which projects need attention, and each repo keeps its own shell running in the background. Every button shows the command it will run before you click it.</p>
-        <div class="refs">
-          <a class="chip" href="https://jacobpoteet.github.io/GitView/" target="_blank" rel="noopener">Project page</a>
-          <a class="chip" href="https://github.com/JacobPoteet/GitView/releases/latest" target="_blank" rel="noopener">Download</a>
-          <a class="chip" href="https://github.com/JacobPoteet/GitView" target="_blank" rel="noopener">Repo</a>
-        </div>
-
-        <!-- Fleet screen mock: static, adapted from the project page hero -->
-        <div class="gv-mock" role="img" aria-label="GitView's home screen: a fleet list of repositories with branch and ahead/behind status on the left, a repository's terminal with a command block in the middle, and its discovered tasks and changed files on the right.">
-          <div class="gv-bar">
-            <span class="gv-brand">GitView</span>
-            <span class="gv-path">F:\GitHub</span>
-            <span class="gv-status"><span class="gv-n">11 repos</span><span class="gv-ok">● all fetched</span><span class="gv-kbd"><kbd>Ctrl</kbd>+<kbd>K</kbd></span></span>
-          </div>
-          <div class="gv-body">
-            <div class="gv-side">
-              <div class="gv-hdr"><span>Pinned</span><span>3</span></div>
-              <div class="gv-repo sel"><span class="n">📌 inbox-app</span><span class="c"><span class="gv-tag up">↑3</span><span class="gv-tag dirty">3 dirty</span></span><span class="b">feat/inbox-filters</span></div>
-              <div class="gv-repo"><span class="n">📌 lunch-special</span><span class="c"><span class="gv-tag dn">↓2</span></span><span class="b">main</span></div>
-              <div class="gv-repo"><span class="n">📌 portfolio</span><span class="c"><span class="gv-tag">✓</span></span><span class="b">main</span></div>
-              <div class="gv-hdr"><span>Fleet</span><span>8</span></div>
-              <div class="gv-repo"><span class="n">explorer-helper</span><span class="c"><span class="gv-tag dn">↓5</span></span><span class="b">main</span></div>
-              <div class="gv-repo"><span class="n">modern-monitor-switcher</span><span class="c"><span class="gv-tag merged">1 merged</span></span><span class="b">main</span></div>
-              <div class="gv-repo"><span class="n">gpx-from-photos</span><span class="c"><span class="gv-tag">✓</span></span><span class="b">main</span></div>
-              <div class="gv-repo"><span class="n">three-rivers-aerial</span><span class="c"><span class="gv-tag dn">↓1</span></span><span class="b">main</span></div>
-            </div>
-            <div class="gv-term">
-              <div class="gv-graphbar"><span class="br">feat/inbox-filters</span><span class="vs">↑3 ↓0 vs origin/main</span></div>
-              <pre class="gv-tbody"><span class="p">PS F:\GitHub\inbox-app&gt;</span> <span class="cmd">npm run dev</span>
-  VITE v5.4  ready in 412 ms
-  ➜  Local: <span class="ok">http://localhost:5183/</span>
-<span class="p">PS F:\GitHub\inbox-app&gt;</span> <span class="cmd">git fetch --prune</span>
-From github.com:JacobPoteet/inbox-app
- - [deleted]  (none) -&gt; origin/fix/scroll-jump
-<span class="p">PS F:\GitHub\inbox-app&gt;</span> <span class="cur"></span></pre>
-              <div class="gv-blockbar"><span class="bar ok"></span><span>git fetch --prune</span><span class="exit">exit 0</span><span class="gv-chip">localhost:5183 ↗</span></div>
-            </div>
-            <div class="gv-right">
-              <div class="gv-hdr"><span>Tasks</span><span>npm</span></div>
-              <div class="gv-task">dev <span>npm run dev</span></div>
-              <div class="gv-task">build <span>npm run build</span></div>
-              <div class="gv-task">test <span>npm test</span></div>
-              <div class="gv-hdr gv-files"><span>Changes</span><span>3</span></div>
-              <div class="gv-file"><b class="m">M</b>src/components/InboxPane.tsx</div>
-              <div class="gv-file"><b class="m">M</b>src/lib/api.ts</div>
-              <div class="gv-file"><b class="a">A</b>src/lib/filters.ts</div>
-            </div>
-          </div>
-        </div>
-        <p class="tr-hints">Hover any button to read its command · click to run it · <kbd>Shift</kbd>+click to type it at the prompt instead.</p>
-      </div>
-
-      <div class="feature wide">
-        <h3>Modern Monitor Switcher</h3>
-        <ul class="tags"><li>Design</li><li>Engineering</li><li>Rust</li><li>Tauri</li></ul>
-        <p>Saves Windows monitor layouts as named profiles like Work or Couch and switches between them in one click, from the tray, a hotkey, or a Stream Deck button. I built it because my work laptop and personal PC share the same monitors, and rearranging them in Display settings twice a day got old.</p>
-        <div class="refs">
-          <a class="chip" href="https://jacobpoteet.github.io/ModernMonitorSwitcher/" target="_blank" rel="noopener">Project page</a>
-          <a class="chip" href="https://github.com/JacobPoteet/ModernMonitorSwitcher/releases/latest" target="_blank" rel="noopener">Download</a>
-          <a class="chip" href="https://github.com/JacobPoteet/ModernMonitorSwitcher" target="_blank" rel="noopener">Repo</a>
-        </div>
-        <div class="media media-grid">
-          <img loading="lazy" width="1800" height="1280" src="https://jacobpoteet.github.io/ModernMonitorSwitcher/screenshots/profiles.png" alt="The Modern Monitor Switcher window, showing four saved profiles, each drawn as the monitors it turns on" />
-          <img loading="lazy" width="1800" height="1280" src="https://jacobpoteet.github.io/ModernMonitorSwitcher/screenshots/displays-dark.png" alt="The Displays page in dark mode: three monitors named Left, Middle, and Right, with the model and resolution of each" />
-        </div>
-      </div>
-
-      <div class="feature wide">
         <h3>DynamicResume</h3>
         <ul class="tags"><li>Design</li><li>Engineering</li><li>Python</li><li>Typst</li><li>Claude Code</li></ul>
         <p>A local app that builds a tailored one-page resume and cover letter for each job listing. Every bullet I could use lives in one master file. Paste a listing and Claude Code picks and orders the ones that fit, then I fine-tune them in an editor with a live page preview. It also tracks each application from first draft to offer.</p>
@@ -377,6 +362,12 @@ From github.com:JacobPoteet/inbox-app
       </div>
 
       <div class="proj-grid">
+        <a class="proj" href="https://jacobpoteet.github.io/ModernMonitorSwitcher/" target="_blank" rel="noopener">
+          <div class="proj-top"><h3>Modern Monitor Switcher</h3><span class="lang">Rust</span></div>
+          <p>Saves Windows monitor layouts as named profiles and switches between them in one click.</p>
+          <span class="proj-link">View project →</span>
+        </a>
+
         <a class="proj" href="https://github.com/JacobPoteet/three-rivers-aerial" target="_blank" rel="noopener">
           <div class="proj-top"><h3>Three Rivers Aerial</h3><span class="lang">Astro</span></div>
           <p>Marketing site for a Pittsburgh drone photography company, built with Astro and Cloudflare Pages.</p>
