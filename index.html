@@ -10,6 +10,9 @@
   <meta property="og:image" content="https://avatars.githubusercontent.com/u/64765148?v=4" />
   <meta property="og:type" content="website" />
   <link rel="icon" href="https://avatars.githubusercontent.com/u/64765148?v=4" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -30,17 +33,25 @@
 
   <!-- Hero -->
   <header class="hero" id="top">
-    <div class="wrap">
-      <img class="avatar" src="https://avatars.githubusercontent.com/u/64765148?v=4" alt="Jacob Poteet" />
-      <h1>Jacob Poteet</h1>
-      <p class="role">Senior Technical Narrative Designer</p>
-      <p class="tag">Game Development · Narrative Design · Systems Design</p>
-      <p class="loc">📍 Pittsburgh, PA</p>
-      <div class="hero-cta">
-        <a href="#judas" class="btn primary">View Work</a>
-        <a href="https://www.judasthegame.com/" class="btn" target="_blank" rel="noopener">JUDAS ↗</a>
-        <a href="https://github.com/JacobPoteet" class="btn" target="_blank" rel="noopener">GitHub ↗</a>
+    <div class="wrap hero-grid">
+      <div class="hero-intro">
+        <img class="avatar" width="80" height="80" src="https://avatars.githubusercontent.com/u/64765148?v=4" alt="Jacob Poteet" />
+        <h1>Jacob Poteet</h1>
+        <p class="role">Senior Technical Narrative Designer in Pittsburgh, PA</p>
+        <p class="pitch">I design game features and build them myself. Right now that means quests and scripted events on Judas at Ghost Story Games. I've also shipped shop features for Hearthstone and multiplayer VR training at WIN Reality.</p>
+        <div class="hero-cta">
+          <a href="#judas" class="btn primary">See the work</a>
+          <a href="https://github.com/JacobPoteet" class="btn" target="_blank" rel="noopener">GitHub ↗</a>
+        </div>
       </div>
+
+      <!-- Credits: laid out like a game's end credits, one row per section -->
+      <ul class="credits" aria-label="Credits">
+        <li style="--i: 0"><a href="#judas"><span class="cr-role">Narrative design</span><span class="cr-title">Judas</span><span class="cr-studio">Ghost Story Games, in development</span></a></li>
+        <li style="--i: 1"><a href="#hearthstone"><span class="cr-role">Shop and live-ops features</span><span class="cr-title">Hearthstone</span><span class="cr-studio">Blizzard Entertainment</span></a></li>
+        <li style="--i: 2"><a href="#winreality"><span class="cr-role">Multiplayer VR features</span><span class="cr-title">WIN Reality</span><span class="cr-studio">VR baseball and softball training</span></a></li>
+        <li style="--i: 3"><a href="#projects"><span class="cr-role">Design and engineering</span><span class="cr-title">Side projects</span><span class="cr-studio">A daily game and Windows tools</span></a></li>
+      </ul>
     </div>
   </header>
 
@@ -49,15 +60,14 @@
     <!-- Judas -->
     <section id="judas">
       <div class="section-head">
-        <span class="kicker">Current</span>
         <h2>Judas</h2>
+        <span class="kicker">Ghost Story Games</span>
       </div>
       <p class="section-sub">A narrative-driven game currently in development.</p>
-      <div class="feature">
+      <div class="feature wide">
         <h3>Narrative Design</h3>
         <p>I design, implement, and maintain scripted events, quests, and other narrative content. More details will be available upon the game's release.</p>
         <div class="refs">
-          <span class="ref-label">Links:</span>
           <a class="chip" href="https://www.judasthegame.com/" target="_blank" rel="noopener">Judas</a>
           <a class="chip" href="https://ghoststorygames.com/" target="_blank" rel="noopener">Ghost Story Games</a>
           <a class="chip" href="https://www.judasthegame.com/news" target="_blank" rel="noopener">Dev Logs</a>
@@ -73,31 +83,35 @@
     <!-- Hearthstone -->
     <section id="hearthstone">
       <div class="section-head">
-        <span class="kicker">Blizzard Entertainment</span>
         <h2>Hearthstone</h2>
+        <span class="kicker">Blizzard Entertainment</span>
       </div>
       <p class="section-sub">Shop and live-ops features for one of the world's most-played digital card games.</p>
 
-      <div class="feature">
-        <h3>Battle-Ready Decks</h3>
-        <p class="meta">Implementation · Design in collaboration with UI/UX designers</p>
-        <p>I spearheaded the implementation of Battle-Ready Decks in the store, a first for the game, offering players curated decks optimized for the latest expansion. Developed using data from hundreds of thousands of play sessions, these decks enhance players' collections with competitive, viable options.</p>
-        <div class="refs">
-          <span class="ref-label">Press &amp; references:</span>
-          <a class="chip" href="https://news.blizzard.com/en-us/hearthstone/23665633/quilboar-join-battlegrounds-and-battle-ready-decks" target="_blank" rel="noopener">Blizzard announcement</a>
-          <a class="chip" href="https://dotesports.com/hearthstone/news/everything-you-need-to-know-about-the-new-battle-ready-hearthstone-decks" target="_blank" rel="noopener">Dot Esports</a>
-          <a class="chip" href="https://www.thegamer.com/hearthstone-battle-ready-decks/" target="_blank" rel="noopener">TheGamer</a>
-          <a class="chip" href="https://blizzardwatch.com/2021/05/07/battle-ready-decks/" target="_blank" rel="noopener">Blizzard Watch</a>
+      <div class="feature split">
+        <div class="feature-text">
+          <h3>Battle-Ready Decks</h3>
+          <ul class="tags"><li>Implementation</li><li>Design with UI/UX</li></ul>
+          <p>I spearheaded the implementation of Battle-Ready Decks in the store, a first for the game, offering players curated decks optimized for the latest expansion. Developed using data from hundreds of thousands of play sessions, these decks enhance players' collections with competitive, viable options.</p>
+          <div class="refs">
+            <span class="ref-label">Press &amp; references:</span>
+            <a class="chip" href="https://news.blizzard.com/en-us/hearthstone/23665633/quilboar-join-battlegrounds-and-battle-ready-decks" target="_blank" rel="noopener">Blizzard announcement</a>
+            <a class="chip" href="https://dotesports.com/hearthstone/news/everything-you-need-to-know-about-the-new-battle-ready-hearthstone-decks" target="_blank" rel="noopener">Dot Esports</a>
+            <a class="chip" href="https://www.thegamer.com/hearthstone-battle-ready-decks/" target="_blank" rel="noopener">TheGamer</a>
+            <a class="chip" href="https://blizzardwatch.com/2021/05/07/battle-ready-decks/" target="_blank" rel="noopener">Blizzard Watch</a>
+          </div>
         </div>
         <div class="media">
           <img loading="lazy" width="1440" height="810" src="Assets/HS_Battle_Ready_Decks.gif" alt="Battle-Ready Decks in the Hearthstone shop" />
         </div>
       </div>
 
-      <div class="feature">
-        <h3>In-Game Announcements</h3>
-        <p class="meta">Implementation · Design with UI/UX designers · Collaboration with backend engineers</p>
-        <p>I created a dynamic system to display in-game messages triggered by server events. The prefab could show a variety of icons and products, with a button allowing players to view them directly in the shop.</p>
+      <div class="feature split">
+        <div class="feature-text">
+          <h3>In-Game Announcements</h3>
+          <ul class="tags"><li>Implementation</li><li>Design with UI/UX</li><li>Backend collaboration</li></ul>
+          <p>I created a dynamic system to display in-game messages triggered by server events. The prefab could show a variety of icons and products, with a button allowing players to view them directly in the shop.</p>
+        </div>
         <div class="media">
           <img loading="lazy" width="2532" height="1170" src="Assets/HS_Messaging.JPEG" alt="In-game announcement messaging" />
         </div>
@@ -109,14 +123,14 @@
     <!-- WIN Reality -->
     <section id="winreality">
       <div class="section-head">
-        <span class="kicker">VR Sports Training</span>
         <h2>WIN Reality</h2>
+        <span class="kicker">VR Sports Training</span>
       </div>
       <p class="section-sub">Multiplayer VR baseball and softball training used by athletes at every level.</p>
 
-      <div class="feature">
+      <div class="feature wide">
         <h3>Team Training</h3>
-        <p class="meta">Technical Design Feature Lead · Designed and implemented game modes, scoreboard, and emotes</p>
+        <ul class="tags"><li>Feature lead</li><li>Game modes</li><li>Scoreboard</li><li>Emotes</li></ul>
         <p>Team Training offers an immersive multiplayer experience for up to 100 players, engaging in exciting batting practice battles across diverse game modes. Guided by a dedicated coach, each session is interactive, providing invaluable instructional feedback and lively, energizing commentary.</p>
         <div class="media media-grid">
           <img loading="lazy" width="768" height="768" src="Assets/TeamTraining_3.gif" alt="Team Training gameplay" />
@@ -124,51 +138,53 @@
         </div>
       </div>
 
-      <div class="feature">
+      <div class="feature wide">
         <h3>AI Pitcher Images</h3>
-        <p class="meta">Designed ComfyUI workflows to create over 9,500 images of a diverse range of pitchers</p>
+        <ul class="tags"><li>ComfyUI workflows</li><li>9,500+ generated images</li></ul>
         <p>Exhibition Mode presents a full-inning challenge where players face a weekly rotation of pitchers. These skilled pitchers are brought to life through AI-generated images that faithfully represent their real-world counterparts, providing an immersive and dynamic experience.</p>
         <div class="media">
           <img loading="lazy" width="3840" height="1600" src="Assets/AI_Pitchers.png" alt="AI-generated pitcher images" />
         </div>
       </div>
 
-      <div class="feature">
-        <h3>Live Pitch</h3>
-        <p class="meta">VR Design · VR UI/UX · Integrated Photon Events in VR with the mobile team</p>
-        <p>This feature marked the debut of a groundbreaking multiplayer experience. Users utilize the WIN Reality app to send pitches into a VR environment, allowing players to face these pitches and swing away in immersive virtual reality scenarios.</p>
+      <div class="feature split">
+        <div class="feature-text">
+          <h3>Live Pitch</h3>
+          <ul class="tags"><li>VR design</li><li>VR UI/UX</li><li>Photon events with mobile</li></ul>
+          <p>This feature marked the debut of a groundbreaking multiplayer experience. Users utilize the WIN Reality app to send pitches into a VR environment, allowing players to face these pitches and swing away in immersive virtual reality scenarios.</p>
+        </div>
         <div class="media">
           <img loading="lazy" width="1440" height="810" src="Assets/LivePitchDemo.gif" alt="Live Pitch demo" />
         </div>
       </div>
 
-      <div class="feature">
-        <h3>Global Leaderboard</h3>
-        <p class="meta">System design · Implementation in C# · Collaboration with the Art team on UI/UX</p>
-        <p>Within the main menu, players can access a global leaderboard showcasing user stats for the current month. This dynamic panel cycles through, highlighting each player along with additional statistics, offering an engaging and comprehensive view of the gaming community's achievements.</p>
-        <div class="media">
+      <div class="mini-grid">
+        <article class="mini">
           <img loading="lazy" width="1440" height="810" src="Assets/Leaderboard.gif" alt="Global leaderboard" />
-        </div>
-      </div>
+          <div class="mini-body">
+            <h3>Global Leaderboard</h3>
+            <ul class="tags"><li>System design</li><li>C#</li><li>UI/UX with Art</li></ul>
+            <p>Within the main menu, players can access a global leaderboard showcasing user stats for the current month. This dynamic panel cycles through, highlighting each player along with additional statistics, offering an engaging and comprehensive view of the gaming community's achievements.</p>
+          </div>
+        </article>
 
-      <div class="feature">
-        <h3>Feed.fm Music Streaming</h3>
-        <p class="meta">Design · Implementation in C# · UI/UX · Integration with 3rd-party API</p>
-        <p>I designed and implemented a music player using Feed.fm's API, offering players station choices with skip, play/pause, and volume controls. Players could interact via the menu using the Quest controller or in the game field with their bat.</p>
-        <div class="media media-grid">
+        <article class="mini">
           <img loading="lazy" width="1440" height="810" src="Assets/FeedFm_Pod.gif" alt="Feed.fm music player in the menu" />
-          <img loading="lazy" width="1440" height="810" src="Assets/FeedFm_Field.gif" alt="Feed.fm music player in the field" />
-        </div>
-      </div>
+          <div class="mini-body">
+            <h3>Feed.fm Music Streaming</h3>
+            <ul class="tags"><li>Design</li><li>C#</li><li>UI/UX</li><li>Third-party API</li></ul>
+            <p>I designed and implemented a music player using Feed.fm's API, offering players station choices with skip, play/pause, and volume controls. Players could interact via the menu using the Quest controller or in the game field with their bat.</p>
+          </div>
+        </article>
 
-      <div class="feature">
-        <h3>Dynamic Bat Visuals</h3>
-        <p class="meta">System design · Implementation in C#</p>
-        <p>I developed a system allowing the creation of various bat types, such as wood or metal, each with unique mesh designs and specific sound effects for a more immersive experience.</p>
-        <div class="media media-grid">
+        <article class="mini">
           <img loading="lazy" width="1920" height="1080" src="Assets/BatVisuals.gif" alt="Dynamic bat visuals" />
-          <img loading="lazy" width="1920" height="1080" src="Assets/WoodBatShowcase.png" alt="Wood bat showcase" />
-        </div>
+          <div class="mini-body">
+            <h3>Dynamic Bat Visuals</h3>
+            <ul class="tags"><li>System design</li><li>C#</li></ul>
+            <p>I developed a system allowing the creation of various bat types, such as wood or metal, each with unique mesh designs and specific sound effects for a more immersive experience.</p>
+          </div>
+        </article>
       </div>
     </section>
 
@@ -177,20 +193,21 @@
     <!-- Personal Projects -->
     <section id="projects">
       <div class="section-head">
-        <span class="kicker">Off the Clock</span>
         <h2>Personal Projects</h2>
+        <span class="kicker">Off the Clock</span>
       </div>
       <p class="section-sub">A selection of my latest side projects and experiments. More on <a href="https://github.com/JacobPoteet?tab=repositories" target="_blank" rel="noopener">GitHub</a>.</p>
 
-      <div class="feature">
-        <h3>Lunch Special</h3>
-        <p class="meta">Design · Engineering · Art direction</p>
-        <p>A daily guessing game where the answer is a diner dish instead of a word. Each guess shows which ingredients and traits you share with the day's special, and each miss unlocks another clue. After 8pm a second puzzle opens for a mystery drink. I built it solo, along with the content tools behind 400+ dishes and 100+ drinks, and you can play it on the web or inside Discord.</p>
-        <div class="refs">
-          <span class="ref-label">Links:</span>
-          <a class="chip" href="https://jacobpoteet.github.io/LunchSpecial/" target="_blank" rel="noopener">Project page</a>
-          <a class="chip" href="https://lunchspecial.app/" target="_blank" rel="noopener">Play it</a>
-          <a class="chip" href="https://github.com/JacobPoteet/LunchSpecial" target="_blank" rel="noopener">Repo</a>
+      <div class="feature split">
+        <div class="feature-text">
+          <h3>Lunch Special</h3>
+          <ul class="tags"><li>Design</li><li>Engineering</li><li>Art direction</li></ul>
+          <p>A daily guessing game where the answer is a diner dish instead of a word. Each guess shows which ingredients and traits you share with the day's special, and each miss unlocks another clue. After 8pm a second puzzle opens for a mystery drink. I built it solo, along with the content tools behind 400+ dishes and 100+ drinks, and you can play it on the web or inside Discord.</p>
+          <div class="refs">
+            <a class="chip" href="https://jacobpoteet.github.io/LunchSpecial/" target="_blank" rel="noopener">Project page</a>
+            <a class="chip" href="https://lunchspecial.app/" target="_blank" rel="noopener">Play it</a>
+            <a class="chip" href="https://github.com/JacobPoteet/LunchSpecial" target="_blank" rel="noopener">Repo</a>
+          </div>
         </div>
         <div class="media">
           <a class="media-link" href="https://lunchspecial.app/" target="_blank" rel="noopener">
@@ -199,85 +216,87 @@
         </div>
       </div>
 
-      <div class="feature">
-        <h3>Explorer Helper</h3>
-        <p class="meta">Design · Engineering · Windows tooling</p>
-        <p>Adds "Clean this folder" to the Windows right-click menu. You swipe through the folder one file at a time with a live preview of each, marking keepers and rejects, and nothing touches the disk until you commit. Rejects go to the Recycle Bin, and Ctrl+Z undoes a whole commit.</p>
-        <div class="refs">
-          <span class="ref-label">Links:</span>
-          <a class="chip" href="https://jacobpoteet.github.io/ExplorerHelper/" target="_blank" rel="noopener">Project page</a>
-          <a class="chip" href="https://github.com/JacobPoteet/ExplorerHelper/releases/latest" target="_blank" rel="noopener">Download</a>
-          <a class="chip" href="https://github.com/JacobPoteet/ExplorerHelper" target="_blank" rel="noopener">Repo</a>
+      <div class="feature split">
+        <div class="feature-text">
+          <h3>Explorer Helper</h3>
+          <ul class="tags"><li>Design</li><li>Engineering</li><li>Windows tooling</li></ul>
+          <p>Adds "Clean this folder" to the Windows right-click menu. You swipe through the folder one file at a time with a live preview of each, marking keepers and rejects, and nothing touches the disk until you commit. Rejects go to the Recycle Bin, and Ctrl+Z undoes a whole commit.</p>
+          <div class="refs">
+            <a class="chip" href="https://jacobpoteet.github.io/ExplorerHelper/" target="_blank" rel="noopener">Project page</a>
+            <a class="chip" href="https://github.com/JacobPoteet/ExplorerHelper/releases/latest" target="_blank" rel="noopener">Download</a>
+            <a class="chip" href="https://github.com/JacobPoteet/ExplorerHelper" target="_blank" rel="noopener">Repo</a>
+          </div>
         </div>
 
         <!-- Triage demo: pure-CSS loop ported from the project page -->
-        <div class="tr-mock" role="img" aria-label="Animation of triage mode: file cards swipe right to keep and left to reject with stamps, counters tick up, then a review screen applies the changes, sending the reject to the Recycle Bin.">
-          <div class="tr-bar">
-            <span class="app-ic">🧹</span>
-            <span class="tr-title">Explorer Helper · Triage</span>
-            <span class="tr-caps" aria-hidden="true"><span class="tr-cap">─</span><span class="tr-cap">□</span><span class="tr-cap close">✕</span></span>
-          </div>
-          <div class="tr-stage">
-            <div class="tr-top">
-              <span class="tr-pill rej">✗ <span class="tr-count rc"><span class="v0">0</span><span class="v1">1</span></span></span>
-              <span class="tr-remaining"><span class="tr-count lc"><span class="v3">3</span><span class="v2">2</span><span class="v1">1</span><span class="v0">0</span></span> left</span>
-              <span class="tr-pill kep">✓ <span class="tr-count kc"><span class="v0">0</span><span class="v1">1</span><span class="v2">2</span></span></span>
+        <div class="feature-media">
+          <div class="tr-mock" role="img" aria-label="Animation of triage mode: file cards swipe right to keep and left to reject with stamps, counters tick up, then a review screen applies the changes, sending the reject to the Recycle Bin.">
+            <div class="tr-bar">
+              <span class="app-ic">🧹</span>
+              <span class="tr-title">Explorer Helper · Triage</span>
+              <span class="tr-caps" aria-hidden="true"><span class="tr-cap">─</span><span class="tr-cap">□</span><span class="tr-cap close">✕</span></span>
             </div>
+            <div class="tr-stage">
+              <div class="tr-top">
+                <span class="tr-pill rej">✗ <span class="tr-count rc"><span class="v0">0</span><span class="v1">1</span></span></span>
+                <span class="tr-remaining"><span class="tr-count lc"><span class="v3">3</span><span class="v2">2</span><span class="v1">1</span><span class="v0">0</span></span> left</span>
+                <span class="tr-pill kep">✓ <span class="tr-count kc"><span class="v0">0</span><span class="v1">1</span><span class="v2">2</span></span></span>
+              </div>
 
-            <div class="tr-deck">
-              <div class="tr-card tr-c">
-                <div class="tr-face shot"><span>🖼</span></div>
-                <div class="tr-name">screenshot 2026-07-04.png</div>
-                <div class="tr-stamp keep">KEEP</div>
-              </div>
-              <div class="tr-card tr-b">
-                <div class="tr-face blurry"><span>🖼</span></div>
-                <div class="tr-name">IMG_0421 (blurry).jpg</div>
-                <div class="tr-stamp rej">REJECT</div>
-              </div>
-              <div class="tr-card tr-a">
-                <div class="tr-face sunset"><span>🎬</span></div>
-                <div class="tr-name">sunset_drone_4k.mp4</div>
-                <div class="tr-stamp keep">KEEP</div>
-              </div>
-              <div class="tr-done">
-                <div>
-                  <div class="big">All caught up ✓</div>
-                  <div class="sub2">2 keep · 1 reject · take one last look</div>
+              <div class="tr-deck">
+                <div class="tr-card tr-c">
+                  <div class="tr-face shot"><span>🖼</span></div>
+                  <div class="tr-name">screenshot 2026-07-04.png</div>
+                  <div class="tr-stamp keep">KEEP</div>
+                </div>
+                <div class="tr-card tr-b">
+                  <div class="tr-face blurry"><span>🖼</span></div>
+                  <div class="tr-name">IMG_0421 (blurry).jpg</div>
+                  <div class="tr-stamp rej">REJECT</div>
+                </div>
+                <div class="tr-card tr-a">
+                  <div class="tr-face sunset"><span>🎬</span></div>
+                  <div class="tr-name">sunset_drone_4k.mp4</div>
+                  <div class="tr-stamp keep">KEEP</div>
+                </div>
+                <div class="tr-done">
+                  <div>
+                    <div class="big">All caught up ✓</div>
+                    <div class="sub2">2 keep · 1 reject · take one last look</div>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div class="tr-review">
-              <h4>One last look before anything happens</h4>
-              <div class="tr-piles">
-                <div class="tr-pile">
-                  <h5 class="k">✓ Keep (2)</h5>
-                  <span class="tr-mini tr-face sunset">🎬</span>
-                  <span class="tr-mini tr-face shot">🖼</span>
+              <div class="tr-review">
+                <h4>One last look before anything happens</h4>
+                <div class="tr-piles">
+                  <div class="tr-pile">
+                    <h5 class="k">✓ Keep (2)</h5>
+                    <span class="tr-mini tr-face sunset">🎬</span>
+                    <span class="tr-mini tr-face shot">🖼</span>
+                  </div>
+                  <div class="tr-pile">
+                    <h5 class="r">✗ Reject (1)</h5>
+                    <span class="tr-mini tr-face blurry tr-fly"><span>🖼</span></span>
+                  </div>
                 </div>
-                <div class="tr-pile">
-                  <h5 class="r">✗ Reject (1)</h5>
-                  <span class="tr-mini tr-face blurry tr-fly"><span>🖼</span></span>
+                <div class="tr-commitrow">
+                  <span class="tr-bin">🗑️</span>
+                  <span class="tr-status">Done · 1 recycled · 2 kept</span>
+                  <span class="tr-commit">Commit…</span>
                 </div>
-              </div>
-              <div class="tr-commitrow">
-                <span class="tr-bin">🗑️</span>
-                <span class="tr-status">Done · 1 recycled · 2 kept</span>
-                <span class="tr-commit">Commit…</span>
               </div>
             </div>
           </div>
+          <p class="tr-hints">Drag with the mouse or fly with the keyboard: <kbd>←</kbd> reject · <kbd>→</kbd> keep · <kbd>↓</kbd> skip · <kbd>Ctrl</kbd>+<kbd>Z</kbd> undo.</p>
         </div>
-        <p class="tr-hints">Drag with the mouse or fly with the keyboard: <kbd>←</kbd> reject · <kbd>→</kbd> keep · <kbd>↓</kbd> skip · <kbd>Ctrl</kbd>+<kbd>Z</kbd> undo.</p>
       </div>
 
-      <div class="feature">
+      <div class="feature wide">
         <h3>GitView</h3>
-        <p class="meta">Design · Engineering · Rust and TypeScript</p>
+        <ul class="tags"><li>Design</li><li>Engineering</li><li>Rust</li><li>TypeScript</li></ul>
         <p>A Windows git client for people who juggle many repositories and still type their own git commands. The home screen shows every repo's branch and uncommitted work at once, so you can see which projects need attention, and each repo keeps its own shell running in the background. Every button shows the command it will run before you click it.</p>
         <div class="refs">
-          <span class="ref-label">Links:</span>
           <a class="chip" href="https://jacobpoteet.github.io/GitView/" target="_blank" rel="noopener">Project page</a>
           <a class="chip" href="https://github.com/JacobPoteet/GitView/releases/latest" target="_blank" rel="noopener">Download</a>
           <a class="chip" href="https://github.com/JacobPoteet/GitView" target="_blank" rel="noopener">Repo</a>
@@ -328,12 +347,11 @@ From github.com:JacobPoteet/inbox-app
         <p class="tr-hints">Hover any button to read its command · click to run it · <kbd>Shift</kbd>+click to type it at the prompt instead.</p>
       </div>
 
-      <div class="feature">
+      <div class="feature wide">
         <h3>Modern Monitor Switcher</h3>
-        <p class="meta">Design · Engineering · Rust and Tauri</p>
+        <ul class="tags"><li>Design</li><li>Engineering</li><li>Rust</li><li>Tauri</li></ul>
         <p>Saves Windows monitor layouts as named profiles like Work or Couch and switches between them in one click, from the tray, a hotkey, or a Stream Deck button. I built it because my work laptop and personal PC share the same monitors, and rearranging them in Display settings twice a day got old.</p>
         <div class="refs">
-          <span class="ref-label">Links:</span>
           <a class="chip" href="https://jacobpoteet.github.io/ModernMonitorSwitcher/" target="_blank" rel="noopener">Project page</a>
           <a class="chip" href="https://github.com/JacobPoteet/ModernMonitorSwitcher/releases/latest" target="_blank" rel="noopener">Download</a>
           <a class="chip" href="https://github.com/JacobPoteet/ModernMonitorSwitcher" target="_blank" rel="noopener">Repo</a>
@@ -344,12 +362,11 @@ From github.com:JacobPoteet/inbox-app
         </div>
       </div>
 
-      <div class="feature">
+      <div class="feature wide">
         <h3>DynamicResume</h3>
-        <p class="meta">Design · Engineering · Python, Typst, and Claude Code</p>
+        <ul class="tags"><li>Design</li><li>Engineering</li><li>Python</li><li>Typst</li><li>Claude Code</li></ul>
         <p>A local app that builds a tailored one-page resume and cover letter for each job listing. Every bullet I could use lives in one master file. Paste a listing and Claude Code picks and orders the ones that fit, then I fine-tune them in an editor with a live page preview. It also tracks each application from first draft to offer.</p>
         <div class="refs">
-          <span class="ref-label">Links:</span>
           <a class="chip" href="https://jacobpoteet.github.io/DynamicResume/" target="_blank" rel="noopener">Project page</a>
           <a class="chip" href="https://github.com/JacobPoteet/DynamicResume" target="_blank" rel="noopener">Repo</a>
         </div>
