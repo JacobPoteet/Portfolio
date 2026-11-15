@@ -185,8 +185,7 @@
       <div class="feature">
         <h3>Lunch Special</h3>
         <p class="meta">Design · Engineering · Art direction</p>
-        <p>A daily dish-guessing game set in the golden age of diners. Players get six attempts to name the day's special, with feedback drawn from shared ingredients and attributes (country, course, temperature, and protein) rather than letter positions. Each miss reveals another rung of a five-clue ladder, and results share as emoji grids that give nothing away.</p>
-        <p>The game ships 283 dishes and 1,415 authored clues across three play modes: daily, archive, and random. An admin CMS with content integrity checks backs the content, and a live analytics dashboard tracks difficulty and engagement. A deterministic fallback keeps the daily puzzle consistent across time zones. The whole thing runs as a single Cloudflare Worker with a React 19 frontend, Hono API, and D1 for storage, plus optional Discord Activity support.</p>
+        <p>A daily guessing game where the answer is a diner dish instead of a word. Each guess shows which ingredients and traits you share with the day's special, and each miss unlocks another clue. After 8pm a second puzzle opens for a mystery drink. I built it solo, along with the content tools behind 400+ dishes and 100+ drinks, and you can play it on the web or inside Discord.</p>
         <div class="refs">
           <span class="ref-label">Links:</span>
           <a class="chip" href="https://jacobpoteet.github.io/LunchSpecial/" target="_blank" rel="noopener">Project page</a>
@@ -203,8 +202,7 @@
       <div class="feature">
         <h3>Explorer Helper</h3>
         <p class="meta">Design · Engineering · Windows tooling</p>
-        <p>A Windows utility for clearing out messy folders. Right-click any folder in Explorer, pick "Clean this folder," and review its contents one file at a time. Every file opens in a live preview as you reach it, whether that's an image, a PDF, or a video or audio track you can scrub through, so you can judge each one without leaving the app and flag it keep, reject, or skip. A folder that would take an hour of manual sorting takes a few minutes of swiping.</p>
-        <p>The whole triage loop runs off the arrow keys, so a folder can be cleared without touching the mouse, and quick rename with automatic collision numbering handles tidying along the way. Nothing is destructive: rejects route to the Recycle Bin rather than being erased, and renames, deletes, and entire commits all undo in one keystroke. Filter and sort by name, size, date, or type before you start, then review both piles before committing. Built on .NET 8 for Windows 10 and 11, MIT licensed, and installs per user with no admin rights required.</p>
+        <p>Adds "Clean this folder" to the Windows right-click menu. You swipe through the folder one file at a time with a live preview of each, marking keepers and rejects, and nothing touches the disk until you commit. Rejects go to the Recycle Bin, and Ctrl+Z undoes a whole commit.</p>
         <div class="refs">
           <span class="ref-label">Links:</span>
           <a class="chip" href="https://jacobpoteet.github.io/ExplorerHelper/" target="_blank" rel="noopener">Project page</a>
@@ -277,8 +275,7 @@
       <div class="feature">
         <h3>GitView</h3>
         <p class="meta">Design · Engineering · Rust and TypeScript</p>
-        <p>A Windows git client designed for developers who switch between repositories and like to utilize the terminal. Where other clients open one repository at a time, GitView's home screen is the whole fleet: a scanner reads the branch, ahead/behind, dirty files, and merged branches for every project and streams the rows in as it goes, so the first screen answers which projects need attention today. Each repository gets its own persistent PowerShell session that survives switching away, so a dev server keeps running while you work somewhere else.</p>
-        <p>Every button shows the command it is about to run. Command blocks mark each command's exit code in the scrollback, printed ports become clickable chips, and task discovery finds the scripts in package.json, Cargo.toml, Makefiles, and more. A GitHub inbox pulls pull requests, issues, and check runs for the whole fleet in one query through gh, and the PR desk pushes, opens, watches, and merges without the browser. Built on Tauri v2 with a React frontend and a Rust backend: repository reads go through libgit2 in process, and anything that touches a remote shells out to git.exe so credential helpers and SSH agents keep working. MIT licensed.</p>
+        <p>A Windows git client for people who juggle many repositories and still type their own git commands. The home screen shows every repo's branch and uncommitted work at once, so you can see which projects need attention, and each repo keeps its own shell running in the background. Every button shows the command it will run before you click it.</p>
         <div class="refs">
           <span class="ref-label">Links:</span>
           <a class="chip" href="https://jacobpoteet.github.io/GitView/" target="_blank" rel="noopener">Project page</a>
@@ -334,8 +331,7 @@ From github.com:JacobPoteet/inbox-app
       <div class="feature">
         <h3>Modern Monitor Switcher</h3>
         <p class="meta">Design · Engineering · Rust and Tauri</p>
-        <p>A Windows utility that saves monitor arrangements as named profiles, like Play, Work, or Couch, and switches between them in one click. It started with two computers sharing one set of monitors: when the work laptop comes on, the personal PC releases two of its three displays so they pick up the other input on their own, then takes them back at the end of the day. Doing that through Display settings every time meant disconnecting screens one by one, finding the new main display, and undoing it all again that night. The work computer needs nothing installed.</p>
-        <p>Profiles switch from the tray menu, a global hotkey that works mid-game, or the <code>msw</code> command line, which runs without the app open and fits on a Stream Deck button. Monitors can be named so profiles read "Left, Middle" instead of model numbers, and each profile is drawn as the screens it turns on. Under the hood, a profile is a captured topology from the Windows CCD API. Adapter IDs change on every boot and driver update, so restoring one means re-matching the saved layout against the machine as it is now, and every candidate is validated with Windows before anything changes on screen. Built in Rust with a Tauri tray app, it starts with Windows, installs per user with no admin prompt, and updates itself. MPL 2.0 licensed.</p>
+        <p>Saves Windows monitor layouts as named profiles like Work or Couch and switches between them in one click, from the tray, a hotkey, or a Stream Deck button. I built it because my work laptop and personal PC share the same monitors, and rearranging them in Display settings twice a day got old.</p>
         <div class="refs">
           <span class="ref-label">Links:</span>
           <a class="chip" href="https://jacobpoteet.github.io/ModernMonitorSwitcher/" target="_blank" rel="noopener">Project page</a>
@@ -351,10 +347,10 @@ From github.com:JacobPoteet/inbox-app
       <div class="feature">
         <h3>DynamicResume</h3>
         <p class="meta">Design · Engineering · Python, Typst, and Claude Code</p>
-        <p>A local app that tailors a one-page resume and matching cover letter to each job listing. Every position, bullet, skill, and project I could show lives in one master file, far more than fits on a page, with tags and a priority on each bullet. An application is a few lines that say which bullets to show, in what order, and how to reword one for that listing, so improving a bullet in the master improves it in every application.</p>
-        <p>Paste a listing and the app runs Claude Code headlessly with read-only access. It reads the master and the listing, picks and orders the bullets, writes a headline and cover letter, breaks the listing into requirements, and lists anything the master can't back up, and every bullet it names is checked against the master before anything is written. In the editor, each requirement is a chip that turns green when a selected bullet covers it, beside a live Typst preview and a meter showing how much of the page is left. Builds warn when a resume runs past one page and flag filler phrases, and the templates are checked with text extraction so they parse cleanly in applicant tracking systems. Career data stays in gitignored files on your own machine; the public repo ships a fictional demo.</p>
+        <p>A local app that builds a tailored one-page resume and cover letter for each job listing. Every bullet I could use lives in one master file. Paste a listing and Claude Code picks and orders the ones that fit, then I fine-tune them in an editor with a live page preview. It also tracks each application from first draft to offer.</p>
         <div class="refs">
           <span class="ref-label">Links:</span>
+          <a class="chip" href="https://jacobpoteet.github.io/DynamicResume/" target="_blank" rel="noopener">Project page</a>
           <a class="chip" href="https://github.com/JacobPoteet/DynamicResume" target="_blank" rel="noopener">Repo</a>
         </div>
         <div class="media media-grid">
