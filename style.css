@@ -125,12 +125,12 @@ img { max-width: 100%; height: auto; display: block; }
 .nav-links .nav-cta:hover { filter: brightness(1.08); }
 
 /* ---------- Hero ---------- */
-.hero { padding: 88px 0 40px; }
+.hero { padding: 88px 0 40px; text-align: center; }
 .hero .avatar {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  margin: 0 0 24px;
+  margin: 0 auto 24px;
   border: 2px solid var(--border);
   box-shadow: var(--shadow);
 }
@@ -150,11 +150,12 @@ img { max-width: 100%; height: auto; display: block; }
   color: var(--text-dim);
   font-size: 1.12rem;
   max-width: 58ch;
-  margin: 0 0 30px;
+  margin: 0 auto 30px;
 }
 .hero-cta {
   display: flex;
   gap: 14px;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
