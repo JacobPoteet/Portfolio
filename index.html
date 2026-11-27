@@ -232,7 +232,7 @@
               <div class="gv-hdr"><span>Fleet</span><span>8</span></div>
               <div class="gv-repo"><span class="n">explorer-helper</span><span class="c"><span class="gv-tag dn">↓5</span></span><span class="b">main</span></div>
               <div class="gv-repo"><span class="n">modern-monitor-switcher</span><span class="c"><span class="gv-tag merged">1 merged</span></span><span class="b">main</span></div>
-              <div class="gv-repo"><span class="n">gpx-from-photos</span><span class="c"><span class="gv-tag">✓</span></span><span class="b">main</span></div>
+              <div class="gv-repo"><span class="n">shrink-ray</span><span class="c"><span class="gv-tag">✓</span></span><span class="b">main</span></div>
               <div class="gv-repo"><span class="n">three-rivers-aerial</span><span class="c"><span class="gv-tag dn">↓1</span></span><span class="b">main</span></div>
             </div>
             <div class="gv-term">
@@ -262,78 +262,18 @@ From github.com:JacobPoteet/inbox-app
       </div>
 
       <div class="feature wide">
-        <div class="feature-text">
-          <h3>Explorer Helper</h3>
-          <ul class="tags"><li>Design</li><li>Engineering</li><li>Windows tooling</li></ul>
-          <p>Adds "Clean this folder" to the Windows right-click menu. You swipe through the folder one file at a time with a live preview of each, marking keepers and rejects, and nothing touches the disk until you commit. Rejects go to the Recycle Bin, and Ctrl+Z undoes a whole commit.</p>
-          <div class="refs">
-            <a class="chip" href="https://jacobpoteet.github.io/ExplorerHelper/" target="_blank" rel="noopener">Project page</a>
-            <a class="chip" href="https://github.com/JacobPoteet/ExplorerHelper/releases/latest" target="_blank" rel="noopener">Download</a>
-            <a class="chip" href="https://github.com/JacobPoteet/ExplorerHelper" target="_blank" rel="noopener">Repo</a>
-          </div>
+        <h3>ShrinkRay</h3>
+        <ul class="tags"><li>Design</li><li>Engineering</li><li>C#</li><li>WPF</li></ul>
+        <p>A Windows app that re-encodes a Plex TV library from H.264 to H.265 on an NVIDIA GPU. You queue a few shows before bed, and ShrinkRay encodes each episode, checks its duration, streams and a full decode, then renames the new file over the original so Plex keeps its metadata and watch history. A swap journal records each step before it runs, so after a crash ShrinkRay picks up where it stopped without losing a file. It took my 878 GB library down to 308 GB. I designed the cassette-deck look and built its WPF control kit from scratch.</p>
+        <div class="refs">
+          <a class="chip" href="https://jacobpoteet.github.io/ShrinkRay/" target="_blank" rel="noopener">Project page</a>
+          <a class="chip" href="https://github.com/JacobPoteet/ShrinkRay/releases/latest" target="_blank" rel="noopener">Download</a>
+          <a class="chip" href="https://github.com/JacobPoteet/ShrinkRay" target="_blank" rel="noopener">Repo</a>
         </div>
-
-        <!-- Triage demo: pure-CSS loop ported from the project page -->
-        <div class="feature-media">
-          <div class="tr-mock" role="img" aria-label="Animation of triage mode: file cards swipe right to keep and left to reject with stamps, counters tick up, then a review screen applies the changes, sending the reject to the Recycle Bin.">
-            <div class="tr-bar">
-              <span class="app-ic">🧹</span>
-              <span class="tr-title">Explorer Helper · Triage</span>
-              <span class="tr-caps" aria-hidden="true"><span class="tr-cap">─</span><span class="tr-cap">□</span><span class="tr-cap close">✕</span></span>
-            </div>
-            <div class="tr-stage">
-              <div class="tr-top">
-                <span class="tr-pill rej">✗ <span class="tr-count rc"><span class="v0">0</span><span class="v1">1</span></span></span>
-                <span class="tr-remaining"><span class="tr-count lc"><span class="v3">3</span><span class="v2">2</span><span class="v1">1</span><span class="v0">0</span></span> left</span>
-                <span class="tr-pill kep">✓ <span class="tr-count kc"><span class="v0">0</span><span class="v1">1</span><span class="v2">2</span></span></span>
-              </div>
-
-              <div class="tr-deck">
-                <div class="tr-card tr-c">
-                  <div class="tr-face shot"><span>🖼</span></div>
-                  <div class="tr-name">screenshot 2026-07-04.png</div>
-                  <div class="tr-stamp keep">KEEP</div>
-                </div>
-                <div class="tr-card tr-b">
-                  <div class="tr-face blurry"><span>🖼</span></div>
-                  <div class="tr-name">IMG_0421 (blurry).jpg</div>
-                  <div class="tr-stamp rej">REJECT</div>
-                </div>
-                <div class="tr-card tr-a">
-                  <div class="tr-face sunset"><span>🎬</span></div>
-                  <div class="tr-name">sunset_drone_4k.mp4</div>
-                  <div class="tr-stamp keep">KEEP</div>
-                </div>
-                <div class="tr-done">
-                  <div>
-                    <div class="big">All caught up ✓</div>
-                    <div class="sub2">2 keep · 1 reject · take one last look</div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="tr-review">
-                <h4>One last look before anything happens</h4>
-                <div class="tr-piles">
-                  <div class="tr-pile">
-                    <h5 class="k">✓ Keep (2)</h5>
-                    <span class="tr-mini tr-face sunset">🎬</span>
-                    <span class="tr-mini tr-face shot">🖼</span>
-                  </div>
-                  <div class="tr-pile">
-                    <h5 class="r">✗ Reject (1)</h5>
-                    <span class="tr-mini tr-face blurry tr-fly"><span>🖼</span></span>
-                  </div>
-                </div>
-                <div class="tr-commitrow">
-                  <span class="tr-bin">🗑️</span>
-                  <span class="tr-status">Done · 1 recycled · 2 kept</span>
-                  <span class="tr-commit">Commit…</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <p class="tr-hints">Drag with the mouse or fly with the keyboard: <kbd>←</kbd> reject · <kbd>→</kbd> keep · <kbd>↓</kbd> skip · <kbd>Ctrl</kbd>+<kbd>Z</kbd> undo.</p>
+        <div class="media">
+          <a class="media-link" href="https://jacobpoteet.github.io/ShrinkRay/" target="_blank" rel="noopener">
+            <img loading="lazy" width="1440" height="900" src="Assets/ShrinkRay_Deck.webp" alt="The ShrinkRay deck mid-encode: a library list on a CRT screen, a cassette reel turning from H.264 to HEVC, amber progress readouts and meters, a track list of episodes with their savings, and a running total of space saved" />
+          </a>
         </div>
       </div>
 
@@ -364,10 +304,10 @@ From github.com:JacobPoteet/inbox-app
           <span class="proj-link">View repo →</span>
         </a>
 
-        <a class="proj" href="https://github.com/JacobPoteet/GPX_From_Photos" target="_blank" rel="noopener">
-          <div class="proj-top"><h3>GPX From Photos</h3><span class="lang">C#</span></div>
-          <p>Backfills location history by generating a GPX track from a group of geotagged photos.</p>
-          <span class="proj-link">View repo →</span>
+        <a class="proj" href="https://jacobpoteet.github.io/ExplorerHelper/" target="_blank" rel="noopener">
+          <div class="proj-top"><h3>Explorer Helper</h3><span class="lang">C#</span></div>
+          <p>Adds "Clean this folder" to the Windows right-click menu, so you can swipe through files to keep or recycle them.</p>
+          <span class="proj-link">View project →</span>
         </a>
       </div>
     </section>
@@ -411,7 +351,7 @@ From github.com:JacobPoteet/inbox-app
       const idle = new IntersectionObserver((entries) => {
         entries.forEach((e) => e.target.classList.toggle("is-offscreen", !e.isIntersecting));
       });
-      document.querySelectorAll(".tr-mock, .gv-mock").forEach((el) => idle.observe(el));
+      document.querySelectorAll(".gv-mock").forEach((el) => idle.observe(el));
     }
   </script>
 
